@@ -4,6 +4,8 @@ version:  dev
 image: docker.io/sallius/tsun-gen3-addon
 url: https://github.com/s-allius/tsun-gen3-proxy
 slug: tsun-proxy-dev
+advanced: False
+stage: experimental
 init: false
 arch:
   - aarch64
@@ -19,9 +21,11 @@ map:
 services:
   - mqtt:want
 ports:
-  8127/tcp: 8127
   5005/tcp: 5005
   10000/tcp: 10000
+
+# FIXME: we disabled the watchdog due to exceptions in the ha supervisor. See: https://github.com/s-allius/tsun-gen3-proxy/issues/249
+# watchdog: "http://[HOST]:[PORT:8127]/-/healthy"
 
 # Definition of parameters in the configuration tab of the addon
 # parameters are available within the container as /data/options.json

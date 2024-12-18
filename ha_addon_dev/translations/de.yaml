@@ -1,0 +1,90 @@
+---
+configuration:
+  inverters:
+    name: Wechselrichter
+    description: >+
+      Für jeden Wechselrichter muss die Seriennummer des Wechselrichters einer MQTT
+      Definition zugeordnet werden. Dazu wird der entsprechende Konfigurationsblock mit der
+      <16-stellige Seriennummer> gestartet, so dass alle nachfolgenden Parameter diesem 
+      Wechselricher zugeordnet sind.
+      Weitere wechselrichterspezifische Parameter (z.B. Polling Mode) können im 
+      Konfigurationsblock gesetzt werden.
+
+      Die Seriennummer der GEN3 Wechselrichter beginnne mit `R17` und die der GEN3PLUS
+      Wechselrichter mir `Y17`oder `47`!
+
+      monitor_sn         # Die GEN3PLUS "Monitoring SN:"
+      node_id            # MQTT-Ersatz für die Seriennummer des Wechselrichters
+      suggested_area     # Vorgeschlagener Installationsbereich für Home-Assistant
+      modbus_polling     # Optionale MODBUS-Polling deaktivieren
+      pv1                # Optional, PV Module Beschreibung
+      pv2                # Optional, PV Module Beschreibung
+
+  tsun.enabled:
+    name: Verbindung zur TSUN-Cloud - nur für GEN3-Wechselrichter
+    description: >-
+      Die Verbindung zur TSUN-Cloud ein- und ausschalten
+      Diese Verbindung wird nur benötigt, wenn Sie Daten an die TSUN-Cloud senden
+      wollen z.B. um die TSUN APPs zu nutzen oder Firmware Updates zu erhalten.
+      
+      on - normaler Proxy-Betrieb
+      off - Der Wechselrichter wird vom Internet isoliert
+  solarman.enabled:
+    name: Verbindung zur Solarman/TSUN-Cloud - nur für GEN3PLUS-Wechselrichter
+    description: >-
+      Die Verbindung zur Solarman/TSUN-Cloud ein- und ausschalten
+      Diese Verbindung wird nur benötigt, wenn Sie Daten an die TSUN-Cloud senden
+      wollen z.B. um die TSUN APPs zu nutzen oder Firmware Updates zu erhalten.
+      
+      on - normaler Proxy-Betrieb
+      off - Der Wechselrichter wird vom Internet isoliert
+  inverters.allow_all:
+    name: Verbindungen von allen Wechselrichtern zulassen
+    description: >-
+      Der Proxy akzeptiert in der Regel nur Verbindungen von bekannten Wechselrichtern.
+      Für Testzwecke und unbekannte Seriennummern einschalten.
+  mqtt.host:
+    name: MQTT Broker Host
+    description: >-
+      Hostname oder IP-Adresse des MQTT-Brokers. Wenn nicht angegeben, versucht das Addon,
+      sich mit dem MQTT-Broker des Home Assistant zu verbinden.
+  mqtt.port:
+    name: MQTT Broker Port
+    description: >-
+      Portnummer des MQTT-Brokers. Wenn nicht angegeben, versucht das Addon,
+      sich mit dem MQTT-Broker des Home Assistant zu verbinden.
+  mqtt.user:
+    name: MQTT Broker Benutzername
+    description: >-
+      Benutzername für den MQTT-Brokers. Wenn nicht angegeben, versucht das Addon,
+      sich mit dem MQTT-Broker des Home Assistant zu verbinden.
+  mqtt.passwd:
+    name: MQTT Broker Passwort
+    description: >-
+      Passwort für den MQTT-Brokers. Wenn nicht angegeben, versucht das Addon,
+      sich mit dem MQTT-Broker des Home Assistant zu verbinden.
+  ha.auto_conf_prefix:
+    name: MQTT-Präfix zum Abonnieren von Homeassistant-Statusaktualisierungen
+  ha.discovery_prefix:
+    name: MQTT-Präfix für `discovery topic`
+  ha.entity_prefix:
+    name: MQTT Topic Präfix zum publizieren von Wechselrichter Daten
+  ha.proxy_node_id:
+    name: MQTT Node ID, für die `proxy_node_id`
+  ha.proxy_unique_id:
+    name: MQTT eindeutige ID, zu Indentifizierung einer Proxy Instanz
+  tsun.host:
+    name: TSUN Cloud Host
+    description: >-
+      Hostname oder IP-Adresse der TSUN-Cloud. Wenn nicht angegeben, versucht das Addon, sich mit der 
+      Standard-Cloud auf logger.talent-monitoring.com zu verbinden 
+  solarman.host:
+    name: Solarman Cloud Host
+    description: >-
+      Hostname oder IP-Adresse der Solarman/TSUN-Cloud. Wenn nicht angegeben, versucht das Addon, sich mit der 
+      Standard-Cloud auf iot.talent-monitoring.com zu verbinden 
+
+
+network:
+  5005/tcp: Listening Port für TSUN GEN3 Geräte
+  10000/tcp: Listening Port für TSUN GEN3PLUS Geräte

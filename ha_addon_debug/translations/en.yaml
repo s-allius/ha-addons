@@ -9,7 +9,8 @@ configuration:
       to this inverter. Further inverter-specific parameters (e.g. polling mode) can be set
       in the configuration block
 
-      The serial numbers of all GEN3 inverters start with `R17`!
+      The serial numbers of all GEN3 inverters start with `R17` and that of the GEN3PLUS
+      inverters with ‘Y17’ or ‘47’!
 
       monitor_sn         # The GEN3PLUS "Monitoring SN:"
       node_id            # MQTT replacement for inverters serial number

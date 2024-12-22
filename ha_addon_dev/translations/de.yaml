@@ -5,86 +5,91 @@ configuration:
     description: >+
       Für jeden Wechselrichter muss die Seriennummer des Wechselrichters einer MQTT
       Definition zugeordnet werden. Dazu wird der entsprechende Konfigurationsblock mit der
-      <16-stellige Seriennummer> gestartet, so dass alle nachfolgenden Parameter diesem 
-      Wechselricher zugeordnet sind.
+      16-stellige Seriennummer gestartet, so dass alle nachfolgenden Parameter diesem 
+      Wechselrichter zugeordnet sind.
       Weitere wechselrichterspezifische Parameter (z.B. Polling Mode) können im 
       Konfigurationsblock gesetzt werden.
 
-      Die Seriennummer der GEN3 Wechselrichter beginnne mit `R17` und die der GEN3PLUS
+      Die Seriennummer der GEN3 Wechselrichter beginnen mit `R17` und die der GEN3PLUS
       Wechselrichter mir `Y17`oder `47`!
 
-      monitor_sn         # Die GEN3PLUS "Monitoring SN:"
-      node_id            # MQTT-Ersatz für die Seriennummer des Wechselrichters
-      suggested_area     # Vorgeschlagener Installationsbereich für Home-Assistant
-      modbus_polling     # Optionale MODBUS-Polling deaktivieren
-      pv1                # Optional, PV Module Beschreibung
-      pv2                # Optional, PV Module Beschreibung
+      Siehe Beispielkonfiguration im Dokumentations-Tab
 
   tsun.enabled:
-    name: Verbindung zur TSUN-Cloud - nur für GEN3-Wechselrichter
-    description: >-
-      Die Verbindung zur TSUN-Cloud ein- und ausschalten
-      Diese Verbindung wird nur benötigt, wenn Sie Daten an die TSUN-Cloud senden
-      wollen z.B. um die TSUN APPs zu nutzen oder Firmware Updates zu erhalten.
+    name: Verbindung zur TSUN Cloud - nur für GEN3-Wechselrichter
+    description: >+
+      Schaltet die Verbindung zur TSUN Cloud ein/aus.
+      Diese Verbindung ist erforderlich, wenn Sie Daten an die TSUN Cloud senden möchten,
+      z.B. um die TSUN-Apps zu nutzen oder Firmware-Updates zu erhalten.
       
-      on - normaler Proxy-Betrieb
-      off - Der Wechselrichter wird vom Internet isoliert
+      ein => normaler Proxy-Betrieb.
+      aus => Der Wechselrichter wird vom Internet isoliert.
   solarman.enabled:
-    name: Verbindung zur Solarman/TSUN-Cloud - nur für GEN3PLUS-Wechselrichter
-    description: >-
-      Die Verbindung zur Solarman/TSUN-Cloud ein- und ausschalten
-      Diese Verbindung wird nur benötigt, wenn Sie Daten an die TSUN-Cloud senden
-      wollen z.B. um die TSUN APPs zu nutzen oder Firmware Updates zu erhalten.
+    name: Verbindung zur Solarman Cloud - nur für GEN3PLUS Wechselrichter
+    description: >+
+      Schaltet die Verbindung zur Solarman Cloud ein/aus.
+      Diese Verbindung ist erforderlich, wenn Sie Daten an die Solarman Cloud senden möchten,
+      z.B. um die Solarman Apps zu nutzen oder Firmware-Updates zu erhalten.
       
-      on - normaler Proxy-Betrieb
-      off - Der Wechselrichter wird vom Internet isoliert
+      ein => normaler Proxy-Betrieb.
+      aus => Der Wechselrichter wird vom Internet isoliert.
   inverters.allow_all:
-    name: Verbindungen von allen Wechselrichtern zulassen
+    name: Erlaube Verbindungen von sämtlichen Wechselrichtern
     description: >-
-      Der Proxy akzeptiert in der Regel nur Verbindungen von bekannten Wechselrichtern.
-      Für Testzwecke und unbekannte Seriennummern einschalten.
+      Der Proxy akzeptiert normalerweise nur Verbindungen von konfigurierten Wechselrichtern.
+      Schalten Sie dies für Testzwecke und unbekannte Seriennummern ein.
   mqtt.host:
     name: MQTT Broker Host
     description: >-
-      Hostname oder IP-Adresse des MQTT-Brokers. Wenn nicht angegeben, versucht das Addon,
-      sich mit dem MQTT-Broker des Home Assistant zu verbinden.
+      Hostname oder IP-Adresse des MQTT-Brokers. Wenn nicht gesetzt, versucht das Addon, eine Verbindung zum Home Assistant MQTT-Broker herzustellen.
   mqtt.port:
     name: MQTT Broker Port
     description: >-
-      Portnummer des MQTT-Brokers. Wenn nicht angegeben, versucht das Addon,
-      sich mit dem MQTT-Broker des Home Assistant zu verbinden.
+      Port des MQTT-Brokers. Wenn nicht gesetzt, versucht das Addon, eine Verbindung zum Home Assistant MQTT-Broker herzustellen.
   mqtt.user:
-    name: MQTT Broker Benutzername
+    name: MQTT Broker Benutzer
     description: >-
-      Benutzername für den MQTT-Brokers. Wenn nicht angegeben, versucht das Addon,
-      sich mit dem MQTT-Broker des Home Assistant zu verbinden.
+      Benutzer für den MQTT-Broker. Wenn nicht gesetzt, versucht das Addon, eine Verbindung zum Home Assistant MQTT-Broker herzustellen.
   mqtt.passwd:
     name: MQTT Broker Passwort
     description: >-
-      Passwort für den MQTT-Brokers. Wenn nicht angegeben, versucht das Addon,
-      sich mit dem MQTT-Broker des Home Assistant zu verbinden.
+      Passwort für den MQTT-Broker. Wenn nicht gesetzt, versucht das Addon, eine Verbindung zum Home Assistant MQTT-Broker herzustellen.
   ha.auto_conf_prefix:
-    name: MQTT-Präfix zum Abonnieren von Homeassistant-Statusaktualisierungen
+    name: MQTT-Präfix für das Abonnieren von Home Assistant-Statusaktualisierungen
   ha.discovery_prefix:
-    name: MQTT-Präfix für `discovery topic`
+    name: MQTT-Präfix für das discovery topic
   ha.entity_prefix:
-    name: MQTT Topic Präfix zum publizieren von Wechselrichter Daten
+    name: MQTT-Themenpräfix für die Veröffentlichung von Wechselrichterwerten
   ha.proxy_node_id:
-    name: MQTT Node ID, für die `proxy_node_id`
+    name: MQTT-Knoten-ID für die proxy_node_id
   ha.proxy_unique_id:
-    name: MQTT eindeutige ID, zu Indentifizierung einer Proxy Instanz
+    name: MQTT-eindeutige ID zur Identifizierung einer Proxy-Instanz
   tsun.host:
     name: TSUN Cloud Host
     description: >-
-      Hostname oder IP-Adresse der TSUN-Cloud. Wenn nicht angegeben, versucht das Addon, sich mit der 
-      Standard-Cloud auf logger.talent-monitoring.com zu verbinden 
+      Hostname oder IP-Adresse der TSUN-Cloud. Wenn nicht gesetzt, versucht das Addon, eine Verbindung zur Cloud logger.talent-monitoring.com herzustellen.
   solarman.host:
     name: Solarman Cloud Host
     description: >-
-      Hostname oder IP-Adresse der Solarman/TSUN-Cloud. Wenn nicht angegeben, versucht das Addon, sich mit der 
-      Standard-Cloud auf iot.talent-monitoring.com zu verbinden 
+      Hostname oder IP-Adresse der Solarman-Cloud. Wenn nicht gesetzt, versucht das Addon, eine Verbindung zur Cloud iot.talent-monitoring.com herzustellen.
+  gen3plus.at_acl.tsun.allow:
+      name: TSUN GEN3PLUS ACL allow
+      description: >-
+        Liste erlaubter AT-Befehle für TSUN GEN3PLUS
+  gen3plus.at_acl.tsun.block:
+      name: TSUN GEN3 ACL block
+      description: >-
+          Liste blockierter AT-Befehle für TSUN GEN3PLUS
+  gen3plus.at_acl.mqtt.allow:
+      name: MQTT GEN3PLUS ACL allow
+      description: >-
+        Liste erlaubter MQTT-Befehle für GEN3PLUS
+  gen3plus.at_acl.mqtt.block:
+      name: MQTT GEN3PLUS ACL block
+      description: >-
+          Liste blockierter MQTT-Befehle für GEN3PLUS
 
 
 network:
-  5005/tcp: Listening Port für TSUN GEN3 Geräte
-  10000/tcp: Listening Port für TSUN GEN3PLUS Geräte
+  5005/tcp: listening Port für TSUN GEN3 Wechselrichter
+  10000/tcp: listening Port für TSUN GEN3PLUS Wechselrichter

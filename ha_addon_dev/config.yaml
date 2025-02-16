@@ -100,7 +100,17 @@ options:
   inverters:
     - serial: R17E760702080400
       monitor_sn: 0
-      node_id: PV-Garage
+      node_id: inv_1
+      suggested_area: Roof
+      modbus_polling: false
+      pv1.manufacturer: Shinefar
+      pv1.type: SF-M18/144550
+      pv2.manufacturer: Shinefar
+      pv2.type: SF-M18/144550
+  batteries:
+    - serial: 4100000000000000
+      monitor_sn: 0
+      node_id: bat_1
       suggested_area: Garage
       modbus_polling: false
       pv1.manufacturer: Shinefar
@@ -110,15 +120,5 @@ options:
   tsun.enabled: true # set default
   solarman.enabled: true # set default
   inverters.allow_all: false # set default
-  batteries:
-    - serial: 4100000000000000
-      monitor_sn: 0
-      node_id: PV-Garage
-      suggested_area: Garage
-      modbus_polling: false
-      pv1.manufacturer: Shinefar
-      pv1.type: SF-M18/144550
-      pv2.manufacturer: Shinefar
-      pv2.type: SF-M18/144550
   gen3plus.at_acl.tsun.allow: ["AT+Z", "AT+UPURL", "AT+SUPDATE"]
   gen3plus.at_acl.mqtt.allow: ["AT+"]

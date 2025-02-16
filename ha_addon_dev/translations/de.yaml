@@ -38,6 +38,19 @@ configuration:
     description: >-
       Der Proxy akzeptiert normalerweise nur Verbindungen von konfigurierten Wechselrichtern.
       Schalten Sie dies für Testzwecke und unbekannte Seriennummern ein.
+  batteries:
+    name: Batterien
+    description: >+
+      Für jede Batterie muss die Seriennummer des Wechselrichters einer MQTT
+      Definition zugeordnet werden. Dazu wird der entsprechende Konfigurationsblock mit der
+      16-stellige Seriennummer gestartet, so dass alle nachfolgenden Parameter diesem 
+      Wechselrichter zugeordnet sind.
+      Weitere wechselrichterspezifische Parameter (z.B. Polling Mode) können im 
+      Konfigurationsblock gesetzt werden.
+
+      Die Seriennummer der GEN3PLUS Batterien beginnen mit `410`!
+
+      Siehe Beispielkonfiguration im Dokumentations-Tab
   mqtt.host:
     name: MQTT Broker Host
     description: >-

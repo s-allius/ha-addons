@@ -1,8 +1,8 @@
-# Home Assistant Add-on: TSUN Proxy
+# Home Assistant Add-on: TSUN Proxy (dev)
 
-TSUN Proxy enables a reliable connection between TSUN third generation
-devices (inverters, energy storages, ...)  and an MQTT broker. With the
-proxy, you can easily retrieve real-time values such as power, current
-and daily energy and integrate the inverter into Home Assistant. This works
-even without an internet connection.
-The optional connection to the TSUN Cloud can be disabled!
+This is a bleeding-edge version of the `TSUN Proxy`  Add-On.
+
+The versions may be based on different feature branches and therefore the range of functions may change.
+
+It is intended for testing new functions or testing new devices that are to be supported with the next release.
+For production, please use the stable version 'TSUN Proxy'.

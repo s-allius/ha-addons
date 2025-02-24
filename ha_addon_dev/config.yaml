@@ -1,6 +1,6 @@
 name: TSUN-Proxy (Dev)
 description: MQTT Proxy for TSUN Photovoltaic Inverters
-version:  0.13.0-dev-2502232025 
+version:  0.13.0-dev-2502242223 
 image: docker.io/sallius/tsun-gen3-addon
 url: https://github.com/s-allius/tsun-gen3-proxy
 slug: tsun-proxy-dev
@@ -30,7 +30,6 @@ ports:
 # Definition of parameters in the configuration tab of the addon
 # parameters are available within the container as /data/options.json
 # and should become picked up by the proxy - current workaround as a transfer script
-# TODO: check again for multi hierarchie parameters
 
 schema:
   inverters:
@@ -98,7 +97,7 @@ schema:
 # If any default value is given, the option becomes a required value.
 options:
   inverters:
-    - serial: R17E760702080400
+    - serial: R17E000000000000
       monitor_sn: 0
       node_id: inv_1
       suggested_area: Roof

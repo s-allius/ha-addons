@@ -21,11 +21,11 @@ profile tsun-proxy-debug flags=(attach_disconnected,mediate_deleted) {
   /dev/tty rw,
 
   # Bashio
-  # /usr/lib/bashio/** ix,
+  /usr/lib/bashio/** ix,
   /tmp/** rwk,
 
   # Access to options.json and other files within your addon
-  # /data/** rw,
+  /data/** rw,
 
   # Start new profile for service
   /usr/bin/myprogram cx -> myprogram,
@@ -34,7 +34,7 @@ profile tsun-proxy-debug flags=(attach_disconnected,mediate_deleted) {
     #include <abstractions/base>
 
     # Receive signals from S6-Overlay
-    signal (receive) peer=*_ADDON_SLUG,
+    signal (receive) peer=*_tsun-proxy-debug,
 
     # Access to options.json and other files within your addon
     /data/** rw,

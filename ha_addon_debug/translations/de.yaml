@@ -1,5 +1,8 @@
 ---
 configuration:
+    name: TSUN-Proxy configuration
+    description: >+
+      Für jeden TSUN Proxy
   inverters:
     name: Wechselrichter
     description: >+

@@ -1,4 +1,4 @@
-# Home Assistant Add-on: TSUN Proxy
+# Home Assistant Add-on: TSUN-Proxy
 
 Integrates TSUN inverters (e.g. TSOL MS800, MS2000, MS3000) and batteries (TSOL DC1000) into Home Assistant.
 
@@ -8,10 +8,6 @@ With the Add-on, you can easily retrieve real-time values such as power, current
 This works even without an internet connection.
 
 The optional connection to the TSUN Cloud can be disabled!
-
-## About
-
-This Add-on and the TSUN Proxy is not related to the company TSUN. It is a private initiative that aims to connect TSUN inverters and storage systems with an MQTT broker. There is no support and no warranty from TSUN.
 
 ## Features
 
@@ -25,5 +21,9 @@ This Add-on and the TSUN Proxy is not related to the company TSUN. It is a priva
 - Self-sufficient island operation without internet
 - Security-Features:
   - control access via `AT-commands`
+
+## About
+
+This Add-on and the TSUN Proxy is not related to the company TSUN. It is a private initiative that aims to connect TSUN inverters and storage systems with an MQTT broker. There is no support and no warranty from TSUN.
 
 [tsunproxy]: https://github.com/s-allius/tsun-gen3-proxy

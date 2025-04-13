@@ -50,7 +50,7 @@ Example add-on configuration after installation:
 
 ```yaml
 inverters:
-  - serial: R17E760702080400
+  - serial: R17E000000000000
     node_id: PV-Garage
     suggested_area: Garage
     modbus_polling: false
@@ -68,8 +68,8 @@ Example add-on configuration for GEN3PLUS inverters:
 inverters:
   - serial: Y17000000000000
     monitor_sn: 2000000000
-    node_id: PV-Garage
-    suggested_area: Garage
+    node_id: inv_1
+    suggested_area: Roof
     modbus_polling: true
     client_mode.host: 192.168.x.x
     client_mode.port: 8899
@@ -82,6 +82,21 @@ inverters:
     pv3.type: SF-M18/144550
     pv4.manufacturer: Shinefar
     pv4.type: SF-M18/144550
+```
+
+Example add-on configuration for GEN3PLUS energie storages:
+
+```yaml
+batteries:
+  - serial: 4100000000000000
+    monitor_sn: 3000000000
+    node_id: bat_1
+    suggested_area: Garage
+    modbus_polling: false
+    pv1.manufacturer: Shinefar
+    pv1.type: SF-M18/144550
+    pv2.manufacturer: Shinefar
+    pv2.type: SF-M18/144550
 ```
 
 **Note**: _This is just an example, you need to replace the values with your own!_
@@ -159,4 +174,4 @@ SOFTWARE.
 [AdGuard]: https://github.com/hassio-addons/addon-adguard-home
 [repository-badge]: https://img.shields.io/badge/Add%20repository%20to%20my-Home%20Assistant-41BDF5?logo=home-assistant&style=for-the-badge
 [repository-url]: https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Fs-allius%2Fha-addons
-[configdetails]: https://github.com/s-allius/tsun-gen3-proxy/wiki/Configuration-toml
+[configdetails]: https://github.com/s-allius/tsun-gen3-proxy/wiki/Configuration-addon

@@ -1,6 +1,6 @@
 name: TSUN-Proxy (Dev)
 description: MQTT Proxy for TSUN Photovoltaic Inverters
-version:  0.14.0-dev-2504160036 
+version:  0.14.0-dev-2504160105 
 image: docker.io/sallius/tsun-gen3-addon
 url: https://github.com/s-allius/tsun-gen3-proxy
 slug: tsun-proxy-dev
@@ -35,7 +35,7 @@ ingress_port: 8127
 
 schema:
   inverters:
-    - serial: match(^(R17|R47|Y17|Y47).{13}$)
+    - serial: match(^(R17|R47|Y00|Y17|Y47).{13}$)
       monitor_sn: int?
       node_id: str
       suggested_area: str

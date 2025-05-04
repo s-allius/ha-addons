@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [unreleased]
 
+- Update dependency aiomqtt to v2.4.0
+- Dashboard: add Notes page and table for important messages
 - Dashboard: add Log-File page
 - Dashboard: add Connection page
 - add web UI to add-on

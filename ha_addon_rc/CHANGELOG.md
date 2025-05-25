@@ -7,6 +7,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [unreleased]
 
+- add-on: bump python to version 3.12.10-r1
+- set no of pv modules for MS800 GEN3PLUS inverters
+- fix the paths to copy the config.example.toml file during proxy start
+- add MQTT topic `dcu_power` for setting output power on DCUs
+- Update ghcr.io/hassio-addons/base Docker tag to v17.2.5
+- fix a lot of pytest-asyncio problems in the unit tests  
+- Cleanup startup code for Quart and the Proxy
+- Redirect the hypercorn traces to a separate log-file
+- Configure the dashboard trace handler by the logging.ini file
+- Dashboard: add Notes page and table for important messages
+- Dashboard: add Log-File page
+- Dashboard: add Connection page
+- add web UI to add-on
+- allow `Y00` serial numbers for GEN3PLUS devices
+
+## [0.13.0] - 2025-04-13
+
 - update dependency python to 3.13
 - add initial support for TSUN MS-3000
 - add initial apparmor support [#293](https://github.com/s-allius/tsun-gen3-proxy/issues/293)

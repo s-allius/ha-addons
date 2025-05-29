@@ -5,6 +5,25 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [unreleased]
+
+## [0.14.0] - 2025-05-29
+
+- add-on: bump python to version 3.12.10-r1
+- set no of pv modules for MS800 GEN3PLUS inverters
+- fix the paths to copy the config.example.toml file during proxy start
+- add MQTT topic `dcu_power` for setting output power on DCUs
+- Update ghcr.io/hassio-addons/base Docker tag to v17.2.5
+- fix a lot of pytest-asyncio problems in the unit tests  
+- Cleanup startup code for Quart and the Proxy
+- Redirect the hypercorn traces to a separate log-file
+- Configure the dashboard trace handler by the logging.ini file
+- Dashboard: add Notes page and table for important messages
+- Dashboard: add Log-File page
+- Dashboard: add Connection page
+- add web UI to add-on
+- allow `Y00` serial numbers for GEN3PLUS devices
+
 ## [0.13.0] - 2025-04-13
 
 - update dependency python to 3.13

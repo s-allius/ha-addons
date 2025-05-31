@@ -1,7 +1,7 @@
 #!/usr/bin/with-contenv bashio
 
 echo "Add-on environment started"
-
+bashio::cache.flush_all
 echo "check for Home Assistant MQTT"
 MQTT_HOST=$(bashio::services mqtt "host")
 MQTT_PORT=$(bashio::services mqtt "port")

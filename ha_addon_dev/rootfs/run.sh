@@ -1,8 +1,9 @@
 #!/usr/bin/with-contenv bashio
 
-echo "run.sh: info: Add-on environment started"
+bashio::log.blue "-----------------------------------------------------------"
+bashio::log.blue "run.sh: info: Add-on environment started"
 bashio::cache.flush_all
-echo "run.sh: info: check for Home Assistant supervisor API"
+bashio::log "run.sh: info: check for Home Assistant supervisor API"
 MQTT_HOST=""
 if bashio::supervisor.ping; then
     bashio::log "run.sh: info: check for Home Assistant MQTT"
@@ -12,17 +13,17 @@ if bashio::supervisor.ping; then
         MQTT_USER=$(bashio::services mqtt "username")
         MQTT_PASSWORD=$(bashio::services mqtt "password")
     else
-        echo "run.sh: error: Home Assistant service MQTT not available!"
+        bashio::log.yellow "run.sh: info: Home Assistant service MQTT not available!"
     fi
 else
-    echo "run.sh: error: Home Assistant supervisor API not available!"
+    bashio::log.red "run.sh: error: Home Assistant supervisor API not available!"
 fi
 
 # if a MQTT was/not found, drop a note
 if [ -z "$MQTT_HOST" ]; then
     bashio::log.yellow "run.sh: info: MQTT configuration not found"
 else
-    echo "run.sh: info: MQTT found"
+    bashio::log.green "run.sh: info: MQTT found"
     export MQTT_HOST
     export MQTT_PORT
     export MQTT_USER
@@ -39,6 +40,6 @@ cd /home/proxy || exit
 
 export VERSION=$(cat /proxy-version.txt)
 
-echo "run.sh: info: Start Proxyserver..."
+bashio::log.blue "run.sh: info: Start Proxyserver..."
+bashio::log.blue "-----------------------------------------------------------"
 python3 server.py --rel_urls --json_config=/data/options.json  --log_path=/homeassistant/tsun-proxy/logs/ --config_path=/homeassistant/tsun-proxy/ --log_backups=2
-echo "run.sh: info: Proxyserver stopped"

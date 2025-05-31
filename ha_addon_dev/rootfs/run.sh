@@ -6,7 +6,7 @@ echo "run.sh: info: check for Home Assistant supervisor API"
 MQTT_HOST=""
 if bashio::supervisor.ping; then
     echo "run.sh: info: check for Home Assistant MQTT"
-    if bashio::services mqtt; then
+    if bashio::services mqtt "host"; then
         MQTT_HOST=$(bashio::services mqtt "host")
         MQTT_PORT=$(bashio::services mqtt "port")
         MQTT_USER=$(bashio::services mqtt "username")

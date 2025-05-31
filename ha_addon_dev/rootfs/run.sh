@@ -3,7 +3,6 @@
 bashio::log.blue "-----------------------------------------------------------"
 bashio::log.blue "run.sh: info: setup Add-on environment"
 bashio::cache.flush_all
-bashio::log "run.sh: info: check for Home Assistant Supervisor API"
 MQTT_HOST=""
 if bashio::supervisor.ping; then
     bashio::log "run.sh: info: check for Home Assistant MQTT service"

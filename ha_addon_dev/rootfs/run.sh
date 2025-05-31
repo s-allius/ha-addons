@@ -5,7 +5,7 @@ bashio::cache.flush_all
 echo "run.sh: info: check for Home Assistant supervisor API"
 MQTT_HOST=""
 if bashio::supervisor.ping; then
-    echo "run.sh: info: check for Home Assistant MQTT"
+    bashio::log "run.sh: info: check for Home Assistant MQTT"
     if bashio::services.available mqtt; then
         MQTT_HOST=$(bashio::services mqtt "host")
         MQTT_PORT=$(bashio::services mqtt "port")
@@ -20,7 +20,7 @@ fi
 
 # if a MQTT was/not found, drop a note
 if [ -z "$MQTT_HOST" ]; then
-    echo "run.sh: info: MQTT configuration not found"
+    bashio::log.yellow "run.sh: info: MQTT configuration not found"
 else
     echo "run.sh: info: MQTT found"
     export MQTT_HOST
@@ -41,3 +41,4 @@ export VERSION=$(cat /proxy-version.txt)
 
 echo "run.sh: info: Start Proxyserver..."
 python3 server.py --rel_urls --json_config=/data/options.json  --log_path=/homeassistant/tsun-proxy/logs/ --config_path=/homeassistant/tsun-proxy/ --log_backups=2
+echo "run.sh: info: Proxyserver stopped"

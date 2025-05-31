@@ -5,10 +5,12 @@ bashio::cache.flush_all
 echo "check for Home Assistant supervisor API"
 if bashio::supervisor.ping; then
     echo "check for Home Assistant MQTT"
-    MQTT_HOST=$(bashio::services mqtt "host")
-    MQTT_PORT=$(bashio::services mqtt "port")
-    MQTT_USER=$(bashio::services mqtt "username")
-    MQTT_PASSWORD=$(bashio::services mqtt "password")
+    if bashio::services mqtt; then
+        MQTT_HOST=$(bashio::services mqtt "host")
+        MQTT_PORT=$(bashio::services mqtt "port")
+        MQTT_USER=$(bashio::services mqtt "username")
+        MQTT_PASSWORD=$(bashio::services mqtt "password")
+    fi
 else
     echo "error Home Assistant supervisor API not available!"
 fi

@@ -1,9 +1,9 @@
 #!/usr/bin/with-contenv bashio
 
 bashio::log.blue "-----------------------------------------------------------"
-bashio::log.blue "run.sh: info: Add-on environment started"
+bashio::log.blue "run.sh: info: setup Add-on environment"
 bashio::cache.flush_all
-bashio::log "run.sh: info: check for Home Assistant supervisor API"
+bashio::log "run.sh: info: check for Home Assistant Supervisor API"
 MQTT_HOST=""
 if bashio::supervisor.ping; then
     bashio::log "run.sh: info: check for Home Assistant MQTT"
@@ -21,9 +21,9 @@ fi
 
 # if a MQTT was/not found, drop a note
 if [ -z "$MQTT_HOST" ]; then
-    bashio::log.yellow "run.sh: info: MQTT configuration not found"
+    bashio::log.yellow "run.sh: info: MQTT config not found"
 else
-    bashio::log.green "run.sh: info: MQTT found"
+    bashio::log.green "run.sh: info: MQTT config found"
     export MQTT_HOST
     export MQTT_PORT
     export MQTT_USER

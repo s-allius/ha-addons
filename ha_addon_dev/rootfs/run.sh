@@ -6,17 +6,17 @@ bashio::cache.flush_all
 bashio::log "run.sh: info: check for Home Assistant Supervisor API"
 MQTT_HOST=""
 if bashio::supervisor.ping; then
-    bashio::log "run.sh: info: check for Home Assistant MQTT"
+    bashio::log "run.sh: info: check for Home Assistant MQTT service"
     if bashio::services.available mqtt; then
         MQTT_HOST=$(bashio::services mqtt "host")
         MQTT_PORT=$(bashio::services mqtt "port")
         MQTT_USER=$(bashio::services mqtt "username")
         MQTT_PASSWORD=$(bashio::services mqtt "password")
     else
-        bashio::log.yellow "run.sh: info: Home Assistant service MQTT not available!"
+        bashio::log.yellow "run.sh: info: Home Assistant MQTT service not available!"
     fi
 else
-    bashio::log.red "run.sh: error: Home Assistant supervisor API not available!"
+    bashio::log.red "run.sh: error: Home Assistant Supervisor API not available!"
 fi
 
 # if a MQTT was/not found, drop a note

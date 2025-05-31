@@ -22,6 +22,7 @@ fi
 if [ -z "$MQTT_HOST" ]; then
     echo "run.sh: info: MQTT configuration not found"
 else
+    echo ""
     echo "run.sh: info: MQTT found"
     export MQTT_HOST
     export MQTT_PORT

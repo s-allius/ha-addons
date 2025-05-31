@@ -22,7 +22,6 @@ fi
 if [ -z "$MQTT_HOST" ]; then
     echo "run.sh: info: MQTT configuration not found"
 else
-    echo ""
     echo "run.sh: info: MQTT found"
     export MQTT_HOST
     export MQTT_PORT
@@ -40,5 +39,5 @@ cd /home/proxy || exit
 
 export VERSION=$(cat /proxy-version.txt)
 
-echo "Start Proxyserver..."
+echo "run.sh: info: Start Proxyserver..."
 python3 server.py --rel_urls --json_config=/data/options.json  --log_path=/homeassistant/tsun-proxy/logs/ --config_path=/homeassistant/tsun-proxy/ --log_backups=2

@@ -2,11 +2,16 @@
 
 echo "Add-on environment started"
 bashio::cache.flush_all
-echo "check for Home Assistant MQTT"
-MQTT_HOST=$(bashio::services mqtt "host")
-MQTT_PORT=$(bashio::services mqtt "port")
-MQTT_USER=$(bashio::services mqtt "username")
-MQTT_PASSWORD=$(bashio::services mqtt "password")
+echo "check for Home Assistant supervisor API"
+if bashio::supervisor.ping; then
+    echo "check for Home Assistant MQTT"
+    MQTT_HOST=$(bashio::services mqtt "host")
+    MQTT_PORT=$(bashio::services mqtt "port")
+    MQTT_USER=$(bashio::services mqtt "username")
+    MQTT_PASSWORD=$(bashio::services mqtt "password")
+else
+    echo "error Home Assistant supervisor API not available!"
+fi
 
 # if a MQTT was/not found, drop a note
 if [ -z "$MQTT_HOST" ]; then

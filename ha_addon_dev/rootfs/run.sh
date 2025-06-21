@@ -18,7 +18,7 @@ if bashio::supervisor.ping; then
         bashio::log.yellow "run.sh: info: Home Assistant MQTT service not available!"
     fi
     SLUG=$(bashio::addon.repository)
-    ADDONNAME=$(bashio::addon.hostname)
+    ADDONNAME=$(bashio::addon.name)
     # HOSTNAME=$(bashio::host.hostname)
     HOSTNAME=$(bashio::info.hostname)
 else
@@ -42,7 +42,7 @@ fi
 if [ -z "$ADDONNAME" ]; then
     bashio::log.yellow "run.sh: info: addon name not found"
 else
-    bashio::log.green "run.sh: info: found hostname: $ADDONNAME"
+    bashio::log.green "run.sh: info: found addon name: $ADDONNAME"
     export ADDONNAME
 fi
 

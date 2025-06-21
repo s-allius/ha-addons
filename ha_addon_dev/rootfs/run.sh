@@ -5,6 +5,7 @@ bashio::log.blue "run.sh: info: setup Add-on environment"
 bashio::cache.flush_all
 MQTT_HOST=""
 SLUG=""
+HOSTNAME=""
 if bashio::supervisor.ping; then
     bashio::log "run.sh: info: check for Home Assistant MQTT service"
     if bashio::services.available mqtt; then
@@ -15,8 +16,9 @@ if bashio::supervisor.ping; then
     else
         bashio::log.yellow "run.sh: info: Home Assistant MQTT service not available!"
     fi
-    bashio::log "run.sh: info: check for slug"
+    bashio::log "run.sh: info: check for slug and hostname"
     SLUG=$(bashio::addon.repository)
+    HOSTNAME==$(bashio::addon.hostname)
 else
     bashio::log.red "run.sh: error: Home Assistant Supervisor API not available!"
 fi
@@ -26,6 +28,13 @@ if [ -z "$SLUG" ]; then
 else
     bashio::log.green "run.sh: info: found addon slug: $SLUG"
     export SLUG
+
+fi
+if [ -z "$HOSTNAME" ]; then
+    bashio::log.yellow "run.sh: info: addon hostname not found"
+else
+    bashio::log.green "run.sh: info: found hostname: $HOSTNAME"
+    export HOSTNAME
 fi
 
 # if a MQTT was/not found, drop a note

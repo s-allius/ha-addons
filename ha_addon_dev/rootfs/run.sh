@@ -19,7 +19,8 @@ if bashio::supervisor.ping; then
     fi
     SLUG=$(bashio::addon.repository)
     ADDONNAME=$(bashio::addon.hostname)
-    HOSTNAME=$(bashio::host.hostname)
+    # HOSTNAME=$(bashio::host.hostname)
+    HOSTNAME=$(bashio::info.hostname)
 else
     bashio::log.red "run.sh: error: Home Assistant Supervisor API not available!"
 fi

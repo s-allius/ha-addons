@@ -7,7 +7,7 @@ MQTT_HOST=""
 SLUG=""
 HOSTNAME=""
 if bashio::supervisor.ping; then
-    bashio::log "run.sh: info: check Home Assistant bashio for configuration values"
+    bashio::log "run.sh: info: check Home Assistant bashio for config values"
     if bashio::services.available mqtt; then
         MQTT_HOST=$(bashio::services mqtt "host")
         MQTT_PORT=$(bashio::services mqtt "port")

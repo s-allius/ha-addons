@@ -18,8 +18,8 @@ if bashio::supervisor.ping; then
         bashio::log.yellow "run.sh: info: Home Assistant MQTT service not available!"
     fi
     SLUG=$(bashio::addon.repository)
-    # ADDONNAME=$(bashio::addon.hostname)
-    ADDONNAME=$(bashio::addon.url)
+    ADDONNAME=$(bashio::addon.hostname)
+    # ADDONNAME=$(bashio::addon.url)
     # HOSTNAME=$(bashio::host.hostname)
     HOSTNAME=$(bashio::info.hostname)
 else

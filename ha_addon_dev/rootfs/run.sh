@@ -15,10 +15,12 @@ if bashio::supervisor.ping; then
     else
         bashio::log.yellow "run.sh: info: Home Assistant MQTT service not available!"
     fi
+    bashio::log.yellow "run.sh: info: check for slug"
     SLUG=$(bashio::addon.repository)
     if [ -z "$SLUG" ]; then
-        bashio::log.yellow "run.sh: info: found addon slug: $SLUG"
+        bashio::log.yellow "run.sh: info1: found addon slug: $SLUG"
     fi
+    bashio::log.yellow "run.sh: info2: found addon slug: $SLUG"
 else
 
 

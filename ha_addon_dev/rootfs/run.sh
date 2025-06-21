@@ -18,9 +18,6 @@ if bashio::supervisor.ping; then
     bashio::log "run.sh: info: check for slug"
     SLUG=$(bashio::addon.repository)
 else
-
-
-else
     bashio::log.red "run.sh: error: Home Assistant Supervisor API not available!"
 fi
 

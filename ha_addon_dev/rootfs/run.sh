@@ -7,7 +7,7 @@ MQTT_HOST=""
 SLUG=""
 HOSTNAME=""
 if bashio::supervisor.ping; then
-    bashio::log "run.sh: info: check for Home Assistant MQTT service"
+    bashio::log "run.sh: info: check Home Assistant bashio for configuration values"
     if bashio::services.available mqtt; then
         MQTT_HOST=$(bashio::services mqtt "host")
         MQTT_PORT=$(bashio::services mqtt "port")
@@ -16,7 +16,6 @@ if bashio::supervisor.ping; then
     else
         bashio::log.yellow "run.sh: info: Home Assistant MQTT service not available!"
     fi
-    bashio::log "run.sh: info: check for slug and hostname"
     SLUG=$(bashio::addon.repository)
     HOSTNAME=$(bashio::addon.hostname)
 else
@@ -41,7 +40,7 @@ fi
 if [ -z "$MQTT_HOST" ]; then
     bashio::log.yellow "run.sh: info: MQTT config not found"
 else
-    bashio::log.green "run.sh: info: MQTT config found"
+    bashio::log.green "run.sh: info: found MQTT config"
     export MQTT_HOST
     export MQTT_PORT
     export MQTT_USER

@@ -103,9 +103,23 @@ configuration:
       name: MQTT GEN3PLUS ACL block
       description: >-
           List of blocked MQTT GEN3PLUS commands
-  logging.level:
-      name: Loggin level
-      description: Test
+  logging:
+    name: Log Files
+    description: >-
+      Test-logging
+    fields:
+      level:
+        name: Logging level
+        description: >-
+          DEBUG: Complete logging  -  
+          INFO(default): Information, warnings, and error messages  -  
+          WARN: Warnings and error messages only  -  
+          ERROR: Error messages only
+      retention_days:
+        name: Retention Period
+        description: >+
+          Retention period for log files in days
+
 network:
   5005/tcp: listening Port for TSUN GEN3 Devices
   10000/tcp: listening Port for TSUN GEN3PLUS Devices

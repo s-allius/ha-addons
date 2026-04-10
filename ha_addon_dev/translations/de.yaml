@@ -102,23 +102,22 @@ configuration:
       description: >-
           Liste blockierter MQTT-Befehle für GEN3PLUS
   logging:
-    name: Log-Dateien
+    name: Protokolldateien
     description: >-
       Test-logging
     fields:
       level:
         name: Logging level
         description: >-
-          DEBUG: Vollständig  -  
+          DEBUG: Vollständige Protokollierung  -  
           INFO(default): Informationen, Warnungen und Fehlermeldungen  -  
           WARN: Nur Warnungen und Fehlermeldungen  -  
           ERROR: Nur Fehlermeldungen
       retention_days:
         name: Retention Period
         description: >+
-          Aufbewahrungfrist der Log-Dateien in Tagen
+          Aufbewahrungfrist der Protokolldateien in Tagen
 
-          
 
 network:
   5005/tcp: listening Port für TSUN GEN3 Wechselrichter

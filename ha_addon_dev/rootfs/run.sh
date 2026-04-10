@@ -47,7 +47,8 @@ else
     export MQTT_PASSWORD
 fi
 
-
+LOG_RETENTION=$(bashio::config "logging.retention_days")
+bashio::log.green "run.sh: info: found log retention: $LOG_RETENTION"
 
 
 # Create folder for log und config files

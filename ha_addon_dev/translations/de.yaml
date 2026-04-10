@@ -101,6 +101,9 @@ configuration:
       name: MQTT GEN3PLUS ACL block
       description: >-
           Liste blockierter MQTT-Befehle für GEN3PLUS
+  logging:
+      name: Logging
+      description: Test
   logging.level:
       name: Logging level
       description: Test

@@ -48,7 +48,7 @@ else
 fi
 
 # get logging config paramters
-LOG_RETENTION=$(bashio::config "logging.retention_days1" 3)
+LOG_RETENTION=$(bashio::config "logging.retention_days" 2)
 bashio::log.green "run.sh: info: found log retention: $LOG_RETENTION days"
 
 

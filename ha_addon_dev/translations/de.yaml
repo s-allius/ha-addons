@@ -51,22 +51,19 @@ configuration:
     description: >-
       Der Proxy akzeptiert normalerweise nur Verbindungen von konfigurierten Wechselrichtern.
       Schalten Sie dies für Testzwecke und unbekannte Seriennummern ein.
-  mqtt:
-    name: MQTT Broker Einstellungen
-    fields:
-      host:
+  mqtt.host:
     name: MQTT Broker Host
     description: >-
       Hostname oder IP-Adresse des MQTT-Brokers. Wenn nicht gesetzt, versucht das Addon, eine Verbindung zum Home Assistant MQTT-Broker herzustellen.
-      port:
+  mqtt.port:
     name: MQTT Broker Port
     description: >-
       Port des MQTT-Brokers. Wenn nicht gesetzt, versucht das Addon, eine Verbindung zum Home Assistant MQTT-Broker herzustellen.
-      user:
+  mqtt.user:
     name: MQTT Broker Benutzer
     description: >-
       Benutzer für den MQTT-Broker. Wenn nicht gesetzt, versucht das Addon, eine Verbindung zum Home Assistant MQTT-Broker herzustellen.
-      passwd:
+  mqtt.passwd:
     name: MQTT Broker Passwort
     description: >-
       Passwort für den MQTT-Broker. Wenn nicht gesetzt, versucht das Addon, eine Verbindung zum Home Assistant MQTT-Broker herzustellen.

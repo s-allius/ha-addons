@@ -111,9 +111,9 @@ configuration:
       level:
         name: Logging level
         description: Test-logging-level
-        fields:
+        items:
           INFO:
-            name: INFO
+            name: InfO
             description: Info-beschr
 
 network:

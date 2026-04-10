@@ -106,14 +106,19 @@ configuration:
     description: >-
       Test-logging
     fields:
-      retention_days:
-        name: Retention retention_days
-        description: >+
-          Test-retention
       level:
         name: Logging level
         description: >-
-          Test-logging-level
+          DEBUG: Vollständig
+          INFO(default): Informationen, Warnungen und Fehlermeldungen
+          WARN: Warnungen und Fehlermeldungen
+          ERROR: Nur Fehlermeldungen
+      retention_days:
+        name: Retention Period
+        description: >+
+          Aufbewahrungfrist der Logs in Tagen
+
+          
 
 network:
   5005/tcp: listening Port für TSUN GEN3 Wechselrichter

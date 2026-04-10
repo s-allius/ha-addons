@@ -104,7 +104,7 @@ configuration:
   logging:
       name: Logging
       description: Test-logging
-  retention_days:
+  logging.retention_days:
       name: Retention retention_days
       description: Test-retention
   logging.level:

@@ -101,7 +101,9 @@ configuration:
       name: MQTT GEN3PLUS ACL block
       description: >-
           Liste blockierter MQTT-Befehle für GEN3PLUS
-
+  logging.level:
+      name: Logging level
+      description: Test
 
 network:
   5005/tcp: listening Port für TSUN GEN3 Wechselrichter

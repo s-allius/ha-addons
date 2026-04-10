@@ -103,7 +103,9 @@ configuration:
       name: MQTT GEN3PLUS ACL block
       description: >-
           List of blocked MQTT GEN3PLUS commands
-
+  logging.level:
+      name: Loggin level
+      description: Test
 network:
   5005/tcp: listening Port for TSUN GEN3 Devices
   10000/tcp: listening Port for TSUN GEN3PLUS Devices

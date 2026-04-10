@@ -51,19 +51,22 @@ configuration:
     description: >-
       Der Proxy akzeptiert normalerweise nur Verbindungen von konfigurierten Wechselrichtern.
       Schalten Sie dies für Testzwecke und unbekannte Seriennummern ein.
-  mqtt.host:
+  mqtt:
+    name: MQTT Broker Einstellungen
+    fields:
+      host:
     name: MQTT Broker Host
     description: >-
       Hostname oder IP-Adresse des MQTT-Brokers. Wenn nicht gesetzt, versucht das Addon, eine Verbindung zum Home Assistant MQTT-Broker herzustellen.
-  mqtt.port:
+      port:
     name: MQTT Broker Port
     description: >-
       Port des MQTT-Brokers. Wenn nicht gesetzt, versucht das Addon, eine Verbindung zum Home Assistant MQTT-Broker herzustellen.
-  mqtt.user:
+      user:
     name: MQTT Broker Benutzer
     description: >-
       Benutzer für den MQTT-Broker. Wenn nicht gesetzt, versucht das Addon, eine Verbindung zum Home Assistant MQTT-Broker herzustellen.
-  mqtt.passwd:
+      passwd:
     name: MQTT Broker Passwort
     description: >-
       Passwort für den MQTT-Broker. Wenn nicht gesetzt, versucht das Addon, eine Verbindung zum Home Assistant MQTT-Broker herzustellen.
@@ -90,7 +93,7 @@ configuration:
       description: >-
         Liste erlaubter AT-Befehle für TSUN GEN3PLUS
   gen3plus.at_acl.tsun.block:
-      name: TSUN GEN3 ACL block
+      name: TSUN GEN3PLUS ACL block
       description: >-
           Liste blockierter AT-Befehle für TSUN GEN3PLUS
   gen3plus.at_acl.mqtt.allow:
@@ -111,7 +114,7 @@ configuration:
         description: >-
           DEBUG: Vollständig  -  
           INFO(default): Informationen, Warnungen und Fehlermeldungen  -  
-          WARN: Warnungen und Fehlermeldungen  -  
+          WARN: Nur Warnungen und Fehlermeldungen  -  
           ERROR: Nur Fehlermeldungen
       retention_days:
         name: Retention Period

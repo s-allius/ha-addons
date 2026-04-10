@@ -103,10 +103,13 @@ configuration:
           Liste blockierter MQTT-Befehle für GEN3PLUS
   logging:
       name: Logging
-      description: Test
+      description: Test-logging
+  retention_days:
+      name: Retention retention_days
+      description: Test-retention
   logging.level:
       name: Logging level
-      description: Test
+      description: Test-logging-level
 
 network:
   5005/tcp: listening Port für TSUN GEN3 Wechselrichter

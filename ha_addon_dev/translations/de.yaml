@@ -109,14 +109,14 @@ configuration:
       level:
         name: Logging level
         description: >-
-          DEBUG: Vollständig
-          INFO(default): Informationen, Warnungen und Fehlermeldungen
-          WARN: Warnungen und Fehlermeldungen
+          DEBUG: Vollständig  -  
+          INFO(default): Informationen, Warnungen und Fehlermeldungen  -  
+          WARN: Warnungen und Fehlermeldungen  -  
           ERROR: Nur Fehlermeldungen
       retention_days:
         name: Retention Period
         description: >+
-          Aufbewahrungfrist der Logs in Tagen
+          Aufbewahrungfrist der Log-Dateien in Tagen
 
           
 

@@ -104,7 +104,7 @@ configuration:
       description: >-
           List of blocked MQTT GEN3PLUS commands
   logging:
-    name: Log Files
+    name: Scope of logging in log files
     description: >-
       The proxy logs operational events in various log files, which help identify and 
       resolve configuration or compatibility issues. A rollover is performed at midnight. 

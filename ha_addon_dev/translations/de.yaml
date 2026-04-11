@@ -102,7 +102,7 @@ configuration:
       description: >-
           Liste blockierter MQTT-Befehle für GEN3PLUS
   logging:
-    name: Protokolldateien
+    name: Umfang der Protkollierung in Log-Dateien
     description: >-
       Der Proxy protokolliert Betriebsereignisse in verschiedenen Log-Dateien, welche 
       helfen Konfiguration- oder Kompatibilitätsprobleme zu finden und zu lösen. Um 

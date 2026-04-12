@@ -31,7 +31,7 @@ configuration:
   tsun.enabled:
     name: Connection to TSUN Cloud - for GEN3 inverter only
     description: >+
-      switch on/off connection to the TSUN cloud.
+      Switch on/off connection to the TSUN cloud.
       This connection is only required if you want send data to the TSUN cloud
       eg. to use the TSUN APPs or receive firmware updates.
       
@@ -48,7 +48,7 @@ configuration:
   solarman.enabled:
     name: Connection to Solarman/TSUN Cloud - for GEN3PLUS inverter only
     description: >+
-      switch on/off connection to the Solarman or TSUN cloud.
+      Switch on/off connection to the Solarman or TSUN cloud.
       This connection is only required if you want send data to the cloud
       eg. to use the Solarman APP, the TSUN Smart APP or receive firmware updates.
       

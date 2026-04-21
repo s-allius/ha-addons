@@ -55,8 +55,6 @@ bashio::log.green "run.sh: info: addon log retention: $LOG_RETENTION days"
 LOG_LVL=$(bashio::config "logging.level" $LOG_LVL)
 bashio::log.green "run.sh: info: addon log level: $LOG_LVL"
 
-IPV4_ADDR=$(bashio::network "ipv4_address")
-bashio::log.green "run.sh: IPV4_ADDR: $IPV4_ADDR"
 
 # Create folder for log und config files
 mkdir -p /homeassistant/tsun-proxy/logs

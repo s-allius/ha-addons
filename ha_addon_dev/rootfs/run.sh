@@ -65,4 +65,4 @@ export VERSION=$(cat /proxy-version.txt)
 
 bashio::log.blue "run.sh: info: Start Proxyserver..."
 bashio::log.blue "-----------------------------------------------------------"
-exec /usr/bin/python3 /server.py --rel_urls --json_config=/data/options.json  --log_path=/homeassistant/tsun-proxy/logs/ --config_path=/homeassistant/tsun-proxy/ --log_backups=$LOG_RETENTION
+exec /usr/bin/python3 server.py --rel_urls --json_config=/data/options.json  --log_path=/homeassistant/tsun-proxy/logs/ --config_path=/homeassistant/tsun-proxy/ --log_backups=$LOG_RETENTION

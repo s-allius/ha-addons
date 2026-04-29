@@ -63,6 +63,17 @@ cd /home/proxy || exit
 
 export VERSION=$(cat /proxy-version.txt)
 
+# 1. Welcher Python-Interpreter wird genutzt?
+echo "Python Path: $(which python3)"
+
+# 2. Wo sucht Python nach Modulen? (sys.path)
+echo "Python Search Paths:"
+/opt/venv/bin/python3 -c "import sys; print('\n'.join(sys.path))"
+
+# 3. Ist Quart importierbar und wo liegt es?
+echo "Checking Quart installation:"
+/opt/venv/bin/python3 -c "import quart; print(f'Quart found at: {quart.__file__}')" || echo "QUART NOT FOUND!"
+
 bashio::log.blue "run.sh: info: Start Proxyserver..."
 bashio::log.blue "-----------------------------------------------------------"
 exec /opt/venv/bin/python3 /home/proxy/server.py --rel_urls --json_config=/data/options.json  --log_path=/homeassistant/tsun-proxy/logs/ --config_path=/homeassistant/tsun-proxy/ --log_backups=$LOG_RETENTION

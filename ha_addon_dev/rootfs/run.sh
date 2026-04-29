@@ -62,8 +62,10 @@ mkdir -p /homeassistant/tsun-proxy/logs
 cd /home/proxy || exit
 
 export VERSION=$(cat /proxy-version.txt)
+python3 -m pip list | grep -i quart || echo "Quart ist NICHT installiert!"
 
 bashio::log.blue "run.sh: info: Start Proxyserver..."
 bashio::log.blue "-----------------------------------------------------------"
+/usr/bin/python3 -m pip list | grep -i quart || echo "Quart ist NICHT installiert!"
 
 exec env PYTHONPATH="/home/proxy" /usr/bin/python3 /home/proxy/server.py --rel_urls --json_config=/data/options.json  --log_path=/homeassistant/tsun-proxy/logs/ --config_path=/homeassistant/tsun-proxy/ --log_backups=$LOG_RETENTION

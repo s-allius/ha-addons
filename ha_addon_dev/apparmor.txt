@@ -3,7 +3,7 @@
 profile ADDON_SLUG flags=(attach_disconnected,mediate_deleted) {
   
   # Capabilities
-  file,
+  # file,
   signal (send) set=(kill,term,int,hup,cont),
 
   # S6-Overlay

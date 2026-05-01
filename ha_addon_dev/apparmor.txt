@@ -1,18 +1,19 @@
 #include <tunables/global>
 
-profile ADDON_SLUG flags=(attach_disconnected,mediate_deleted) {
-  
+profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted) {
+  #include <abstractions/base>
+
   # Capabilities
   file,
   signal (send) set=(kill,term,int,hup,cont),
 
   # S6-Overlay
   /init ix,
-  # /bin/** ix,
-  # /usr/bin/** ix,
+  /bin/** ix,
+  /usr/bin/** ix,
   /run/{s6,s6-rc*,service}/** ix,
-  # /package/** ix,
-  # /command/** ix,
+  /package/** ix,
+  /command/** ix,
   /etc/services.d/** rwix,
   /etc/cont-init.d/** rwix,
   /etc/cont-finish.d/** rwix,
@@ -27,7 +28,7 @@ profile ADDON_SLUG flags=(attach_disconnected,mediate_deleted) {
   /data/** rw,
 
   # Start new profile for service
-  /opt/venv/bin/python3* cx -> myprogram,
+  # /opt/venv/bin/python3* cx -> myprogram,
 
   profile myprogram flags=(attach_disconnected,mediate_deleted) {
 

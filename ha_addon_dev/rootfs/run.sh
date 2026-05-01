@@ -68,11 +68,13 @@ echo "Python Path: $(which python3)"
 
 # 2. Wo sucht Python nach Modulen? (sys.path)
 echo "Python Search Paths:"
-/opt/venv/bin/python3 -c "import sys; print('\n'.join(sys.path))"
+# /opt/venv/bin/python3 -c "import sys; print('\n'.join(sys.path))"
+python3 -c "import sys; print('\n'.join(sys.path))"
 
 # 3. Ist Quart importierbar und wo liegt es?
 echo "Checking Quart installation:"
-/opt/venv/bin/python3 -c "import quart; print(f'Quart found at: {quart.__file__}')" || echo "QUART NOT FOUND!"
+# /opt/venv/bin/python3 -c "import quart; print(f'Quart found at: {quart.__file__}')" || echo "QUART NOT FOUND!"
+python3 -c "import quart; print(f'Quart found at: {quart.__file__}')" || echo "QUART NOT FOUND!"
 
 bashio::log.blue "run.sh: info: Start Proxyserver..."
 bashio::log.blue "-----------------------------------------------------------"

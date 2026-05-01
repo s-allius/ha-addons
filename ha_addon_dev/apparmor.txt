@@ -31,7 +31,6 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted) {
   
   /home/proxy/** r,
     
-  # Netzwerk ist fuer Python-Apps im Child-Profil meistens nötig
-  network inet stream,
-  network inet dgram,
+  # network inet stream,
+  # network inet dgram,
 }

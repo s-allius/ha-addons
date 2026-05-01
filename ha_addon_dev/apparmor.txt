@@ -33,6 +33,7 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted) {
   
   profile myprogram flags=(attach_disconnected,mediate_deleted) {
     #include <abstractions/base>
+    #include <abstractions/python> # Hinzugefügt für Python-Module
 
     # Receive signals from S6-Overlay
     # signal (receive) peer=tsun-proxy-dev,
@@ -44,7 +45,7 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted) {
     /share/** rw,
 
     # Access required for service functionality
-    /usr/bin/myprogram r,
+    /opt/venv/bin/python3* ix,
     /bin/bash rix,
     /bin/echo ix,
     /etc/passwd r,

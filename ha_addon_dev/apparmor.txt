@@ -29,7 +29,6 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted) {
 
   profile myprogram flags=(attach_disconnected,mediate_deleted) {
 
-    /opt/venv/lib/python3*/** r,
     /home/proxy/** r,
     /data/** rw,
     /dev/tty rw,

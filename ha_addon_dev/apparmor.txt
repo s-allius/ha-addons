@@ -3,7 +3,6 @@
 profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted) {
   
   # Capabilities
-  file,
   signal (send) set=(kill,term,int,hup,cont),
 
   # S6-Overlay

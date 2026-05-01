@@ -34,6 +34,6 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted) {
   profile myprogram flags=(attach_disconnected,mediate_deleted) {
     #include <abstractions/base>
     #include <abstractions/python>
-    /opt/venv/bin/python3*
+    /opt/venv/bin/python3*/** r,
   }
 }

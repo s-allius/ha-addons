@@ -33,7 +33,6 @@ profile ADDON_SLUG flags=(attach_disconnected,mediate_deleted) {
 
   profile myprogram flags=(attach_disconnected,mediate_deleted) {
     #include <abstractions/base>
-    #include <abstractions/python>
 
     /opt/venv/lib/python3*/** r,
     /home/proxy/** r,

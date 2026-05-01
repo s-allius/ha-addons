@@ -1,10 +1,9 @@
 name: TSUN-Proxy (Debug)
 description: MQTT Proxy for TSUN Photovoltaic Inverters with Debug Logging
-version:  0.15.0-debug-2605012047 
+version:  0.15.0-debug-2605012054 
 image: docker.io/sallius/tsun-gen3-addon
 url: https://github.com/s-allius/tsun-gen3-proxy
 slug: tsun-proxy-debug
-advanced: True
 stage: experimental
 init: false
 arch:

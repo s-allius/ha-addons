@@ -1,6 +1,6 @@
 #include <tunables/global>
 
-profile ADDON_SLUG flags=(attach_disconnected,mediate_deleted) {
+profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted) {
   #include <abstractions/base>
 
   # Capabilities
@@ -26,29 +26,4 @@ profile ADDON_SLUG flags=(attach_disconnected,mediate_deleted) {
 
   # Access to options.json and other files within your addon
   /data/** rw,
-
-  # Start new profile for service
-  /opt/venv/bin/python3* r,
-  /opt/venv/bin/python3* cx -> myprogram,
-  
-  profile myprogram flags=(attach_disconnected,mediate_deleted) {
-    #include <abstractions/base>
-    #include <abstractions/python> # Hinzugefügt für Python-Module
-
-    # Receive signals from S6-Overlay
-    # signal (receive) peer=tsun-proxy-dev,
-
-    # Access to options.json and other files within your addon
-    /data/** rw,
-
-    # Access to mapped volumes specified in config.json
-    /share/** rw,
-
-    # Access required for service functionality
-    /opt/venv/bin/python3* ix,
-    /bin/bash rix,
-    /bin/echo ix,
-    /etc/passwd r,
-    /dev/tty rw,
-  }
 }

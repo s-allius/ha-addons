@@ -13,7 +13,6 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted) {
   capability kill,
 
   # Der Übergang (ohne Includes im Hauptteil)
-  deny /usr/bin/python3* x,
   /usr/bin/python3* px -> myprogram,
 
   # S6-Overlay Kernel-Rights

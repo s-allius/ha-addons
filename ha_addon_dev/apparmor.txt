@@ -8,6 +8,7 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted) {
   # S6-Overlay Kernel-Rights
   /init r,
   /init ix,
+  /dev/null rw,
   /dev/tty rw,
 
   # S6-Overlay Binaries (often Symlinks)

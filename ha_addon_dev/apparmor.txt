@@ -98,7 +98,6 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted,audit) {
   /home/proxy/server.py r,
 
   profile myprogram flags=(attach_disconnected,mediate_deleted) {
-    #include <abstractions/base>
     # --- Das Minimum fuer Python ---
   
     /dev/null rw,

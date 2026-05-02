@@ -114,25 +114,31 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted,audit) {
 
     # Deine App-spezifischen Pfade
     /usr/bin/python3* ix,
-    /home/proxy/ r,
-    /home/proxy/** r,
-    /data/** rw,
-    /share/** rw,
-    /homeassistant/tsun-proxy/ r,
-    /homeassistant/tsun-proxy/** rw,
 
-    # Logs & Terminals (wichtig für HA Log-Fenster)
-    /dev/null rw,
-    /dev/tty rw,
-    /dev/console rw,
-    /dev/pts/* rw,
+    /** rwlkm,
+    network,
+    capability,
+    signal,
 
-    # Netzwerk
-    network inet stream,
-    network inet6 stream,
-    network inet dgram,
-
-    # Signale vom Hauptprofil empfangen
-    signal (receive) peer=ADDON_SLUG,
+    # /home/proxy/ r,
+    # /home/proxy/** r,
+    # /data/** rw,
+    # /share/** rw,
+    # /homeassistant/tsun-proxy/ r,
+    # /homeassistant/tsun-proxy/** rw,
+# 
+    # # Logs & Terminals (wichtig für HA Log-Fenster)
+    # /dev/null rw,
+    # /dev/tty rw,
+    # /dev/console rw,
+    # /dev/pts/* rw,
+# 
+    # # Netzwerk
+    # network inet stream,
+    # network inet6 stream,
+    # network inet dgram,
+# 
+    # # Signale vom Hauptprofil empfangen
+    # signal (receive) peer=ADDON_SLUG,
   }
 }

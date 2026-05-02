@@ -15,13 +15,21 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted) {
   /package/** r,
   /package/** ix,
 
+  # Für das Erstellen der Verzeichnisse selbst (mkdir)
+  /run/ w,
+  /run/** rwk,
+  
+  # S6-Overlay nutzt oft diese Pfade für IPC und Locks
+  /run/{s6,s6-rc*,service}/ w,
+  /run/{s6,s6-rc*,service}/** rwk,
+  /run/{s6,s6-rc*,service}/** ix,
+  
   # S6-Overlay Binaries (often Symlinks)
   /bin/** ix,
   /usr/bin/bash ix,
   /usr/bin/env ix,
   /usr/bin/s6-* ix,
   /usr/lib/bashio/** ix,
-  /run/{s6,s6-rc*,service}/** ix,
   /etc/services.d/** rwix,
   /data/** rw,
   /tmp/** rwk,

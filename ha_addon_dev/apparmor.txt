@@ -12,7 +12,7 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted,audit) {
   capability fsetid,
   capability kill,
   # Capabilities fuer Signale
-  signal (send) set=(kill,term,int,hup,cont),
+  signal (send,receive) set=(kill,term,int,hup,cont),
 
   # Der Übergang (ohne Includes im Hauptteil)
   /usr/bin/python3* r,
@@ -26,9 +26,14 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted,audit) {
   /dev/tty rw,
   /dev/console rw,
   /dev/pts/* rw,
+  /dev/pts/[0-9]* rw,
+  /dev/fd/ r,
+  /dev/fd/** rw,
   /proc/*/fd/ r,
   /proc/*/fd/** rw,
-  
+  /proc/self/fd/ r,
+  /proc/self/fd/** rw,
+
   /bin/** ix,
   /command/** r,
   /command/** ix,
@@ -66,6 +71,8 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted,audit) {
   /run/s6-rc/servicedirs/ w,
   /run/s6-rc/servicedirs/** rwk,
   /run/s6-rc/servicedirs/** l,
+  /run/uncaught-logs/ w,
+  /run/uncaught-logs/** rwk,
 
   # S6-Kommunikation (FIFOs und Sockets)
   /run/s6-rc:*/ r,

@@ -107,6 +107,7 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted,audit) {
   /home/proxy/server.py r,
 
   profile myprogram flags=(attach_disconnected,mediate_deleted) {
+    capability dac_override,
     # --- Das Minimum fuer Python ---
   
     /dev/null rw,
@@ -124,14 +125,19 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted,audit) {
     
     # Dynamischer Linker (Essenziell, damit Python startet)
     /lib/ld-*.so* mr,
-    /lib/*/ld-*.so* mr,
+    /usr/lib/ld-*.so* mr,
+    /etc/ld.so.cache r,
+
+    /proc/self/status r,
+    /proc/cpuinfo r,
+    /proc/meminfo r,
+    /sys/devices/system/cpu/** r,
 
     # Deine App & Daten
     /home/proxy/ r,
     /home/proxy/** r,
     /data/** rw,
     /share/** rw,
-    /dev/tty rw,
     /homeassistant/tsun-proxy/** rw,
 
     # Netzwerk (Raw, statt Abstraction)
@@ -145,7 +151,6 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted,audit) {
     /etc/nsswitch.conf r,
     /etc/passwd r,
     /etc/group r,
-    /etc/ld.so.cache r,
 
     # Signale von S6 empfangen
     signal (receive) peer=tsun-proxy-dev,

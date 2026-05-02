@@ -109,9 +109,9 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted,audit) {
     /usr/bin/python3* ix,
     
     # Libraries (Shared Objects & Python Modules)
-    /lib/** r,
-    /usr/lib/** r,
-    /usr/local/lib/** r,
+    /lib/** mr,
+    /usr/lib/** mr,
+    /usr/local/lib/** mr,
     
     # Dynamischer Linker (Essenziell, damit Python startet)
     /lib/ld-*.so* mr,
@@ -123,13 +123,13 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted,audit) {
     /data/** rw,
     /share/** rw,
     /dev/tty rw,
+    /homeassistant/tsun-proxy/** rw,
 
     # Netzwerk (Raw, statt Abstraction)
     network inet stream,
     # network inet6 stream,
     network inet dgram,
-    /lib/x86_64-linux-gnu/libnss_*.so* mr,   # Für amd64 (Proxmox)
-    /usr/lib/libnss_*.so* mr,
+    network inet stream bind,
 
     # System-Infos (DNS, Zeit, User)
     /etc/hosts r,

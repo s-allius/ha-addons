@@ -1,10 +1,14 @@
 #include <tunables/global>
 
 profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted) {
+  # Der Übergang (ohne Includes im Hauptteil)
+  deny /usr/bin/python3* x,
+  /usr/bin/python3* px -> myprogram,
+
   # --- Hauptprofil (S6/Bash) ---
   /init ix,
   /bin/** ix,
-  # /usr/bin/** ix,
+  /usr/bin/** ix,
   /usr/lib/bashio/** ix,
   /run/{s6,s6-rc*,service}/** ix,
   /etc/services.d/** rwix,
@@ -16,8 +20,6 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted) {
   capability kill,
   signal (send) set=(kill,term,int,hup,cont),
 
-  # Der Übergang (ohne Includes im Hauptteil)
-  /usr/bin/python3* px -> myprogram,
 
   profile myprogram flags=(attach_disconnected,mediate_deleted) {
     # --- Das Minimum fuer Python ---

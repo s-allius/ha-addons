@@ -1,8 +1,10 @@
 #include <tunables/global>
 
 profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted) {
-  
+  #include <abstractions/base>
+
   # Capabilities
+  file,
   signal (send) set=(kill,term,int,hup,cont),
 
   # S6-Overlay
@@ -13,8 +15,8 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted) {
   /package/** ix,
   /command/** ix,
   /etc/services.d/** rwix,
-  /etc/cont-init.d/** rwix,
-  /etc/cont-finish.d/** rwix,
+  # /etc/cont-init.d/** rwix,
+  # /etc/cont-finish.d/** rwix,
   /run/{,**} rwk,
   /dev/tty rw,
 
@@ -26,9 +28,36 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted) {
   /data/** rw,
 
   
-  
-  /home/proxy/** r,
+  /usr/bin/python3* Px -> myprogram,
+  profile myprogram flags=(attach_disconnected,mediate_deleted) {
+    #include <abstractions/base>
+    #include <abstractions/python>
+
+    # Python darf sich selbst und Bibliotheken lesen
+    /usr/bin/python3* ix,
+    /usr/lib/python3*/** r,
+    /usr/local/lib/python3*/** r,  # Hier landen oft global installierte pip-Pakete
     
-  # network inet stream,
-  # network inet dgram,
+    # Zugriff auf deine App-Dateien (ohne venv im Root oder /home/proxy)
+    /home/proxy/ r,
+    /home/proxy/** r,
+    
+    # Zugriff auf Home Assistant Verzeichnisse
+    /data/** rw,
+    /share/** rw,
+    /dev/tty rw,
+
+    # Netzwerk-Berechtigungen (für den Proxy zwingend)
+    network inet stream,
+    network inet6 stream,
+    network inet dgram,
+
+    # Erlaubt Empfang von Signalen (SIGTERM) vom Hauptprofil (S6)
+    signal (receive) peer=ADDON_SLUG,
+    
+    # Notwendig fuer DNS-Auflösung und lokale Hostnames
+    /etc/hosts r,
+    /etc/resolv.conf r,
+    /etc/nsswitch.conf r,
+  }
 }

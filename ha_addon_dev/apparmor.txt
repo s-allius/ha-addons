@@ -1,6 +1,6 @@
 #include <tunables/global>
 
-profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted) {
+profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted,audit) {
 
   # S6-Overlay benötigt diese Capabilities, um Dienste zu starten
   capability chown,
@@ -13,6 +13,7 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted) {
   capability kill,
 
   # Der Übergang (ohne Includes im Hauptteil)
+  deny /usr/bin/python3* x,
   /usr/bin/python3* px -> myprogram,
 
   # S6-Overlay Kernel-Rights
@@ -43,6 +44,12 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted) {
   /run/s6-rc/servicedirs/ w,
   /run/s6-rc/servicedirs/** rwk,
   /run/s6-rc/servicedirs/** l,
+
+  # S6-Kommunikation (FIFOs und Sockets)
+  /run/s6-rc:**/ rwk,
+  /run/s6-rc:**/ p,
+  /run/s6/** p,
+  /run/s6/** s,
 
 
   # S6-Overlay Binaries (often Symlinks)

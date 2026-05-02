@@ -11,6 +11,8 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted,audit) {
   capability fowner,
   capability fsetid,
   capability kill,
+  # Capabilities fuer Signale
+  signal (send) set=(kill,term,int,hup,cont),
 
   # Der Übergang (ohne Includes im Hauptteil)
   /usr/bin/python3* r,
@@ -50,6 +52,8 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted,audit) {
   /etc/s6-overlay/** r,
   /etc/services.d/** rwix,
   /etc/cont-init.d/** rwix,
+  /etc/cont-finish.d/** rwix,
+  
 
   # Runtime & Verzeichnisse (l für Verknüpfungen/Erstellung)
   /run/ w,
@@ -87,8 +91,6 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted,audit) {
   /lib/*/ld-*.so* mr,
   /usr/lib/ld-*.so* mr,
 
-  # Capabilities fuer Signale
-  signal (send) set=(kill,term,int,hup,cont),
 
   /run.sh r,
   /run.sh ix,

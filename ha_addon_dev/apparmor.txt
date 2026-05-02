@@ -21,7 +21,7 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted) {
   /init ix,
   /dev/null rw,
   /dev/tty rw,
-  /dev/urandom r,
+  # /dev/urandom r,
   /command/** r,
   /command/** ix,
   /package/** r,
@@ -41,9 +41,9 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted) {
   /run/{s6,s6-rc*,service}/ rw,
   /run/{s6,s6-rc*,service}/** rwk,
   /run/{s6,s6-rc*,service}/** ix,
-  # /run/s6-rc/servicedirs/ w,
-  # /run/s6-rc/servicedirs/** rwk,
-  # /run/s6-rc/servicedirs/** l,
+  /run/s6-rc/servicedirs/ w,
+  /run/s6-rc/servicedirs/** rwk,
+  /run/s6-rc/servicedirs/** l,
 
 
   # S6-Overlay Binaries (often Symlinks)

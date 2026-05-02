@@ -20,14 +20,16 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted,audit) {
   /init r,
   /init ix,
   /dev/null rw,
-  /dev/tty rw,
   /dev/urandom r,
+  /dev/tty rw,
+  /dev/console rw,
+  
+  /bin/** ix,
   /command/** r,
   /command/** ix,
   /package/** r,
   /package/** ix,
-  /bin/** ix,
-
+  
   # /etc Zugriff (S6-Konfigurationen)
   /etc/ r,
   /etc/s6-overlay/ r,
@@ -52,8 +54,10 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted,audit) {
 
   # S6-Overlay Binaries (often Symlinks)
   /usr/bin/bash ix,
-  /usr/bin/env ix,
   /usr/bin/s6-* ix,
+  /usr/bin/env ix,
+  /usr/bin/[^p]* ix,   # Erlaubt fast alles, was nicht mit p anfängt (z.B. sed, grep)
+  /usr/bin/p[^y]* ix,  # Erlaubt Programme mit p, aber nicht py...
   /usr/lib/bashio/** ix,
   /data/** rw,
   /tmp/** rwk,

@@ -1,6 +1,16 @@
 #include <tunables/global>
 
 profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted) {
+
+  # S6-Overlay benötigt diese Capabilities, um Dienste zu starten
+  capability chown,
+  capability setuid,
+  capability setgid,
+  capability dac_override,
+  capability dac_read_search,
+  capability fowner,
+  capability kill,
+
   # Der Übergang (ohne Includes im Hauptteil)
   deny /usr/bin/python3* x,
   /usr/bin/python3* px -> myprogram,
@@ -14,37 +24,31 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted) {
   /command/** ix,
   /package/** r,
   /package/** ix,
+  /bin/** ix,
 
-  # Für das Erstellen der Verzeichnisse selbst (mkdir)
+  # /etc Zugriff (S6-Konfigurationen)
+  /etc/ r,
+  /etc/s6-overlay/ r,
+  /etc/s6-overlay/** r,
+  /etc/services.d/** rwix,
+  /etc/cont-init.d/** rwix,
+
+  # Runtime & Verzeichnisse (l für Verknüpfungen/Erstellung)
   /run/ w,
   /run/** rwk,
-  
-  # S6-Overlay nutzt oft diese Pfade für IPC und Locks
-  /run/{s6,s6-rc*,service}/ w,
+  /run/{s6,s6-rc*,service}/ rw,
   /run/{s6,s6-rc*,service}/** rwk,
   /run/{s6,s6-rc*,service}/** ix,
 
-  # S6-Overlay Configurations
-  /etc/s6-overlay/ r,
-  /etc/s6-overlay/** r,
-  /etc/s6-overlay/s6-rc.d/ r,
-  /etc/s6-overlay/s6-rc.d/** r,
-  capability dac_override,
-  capability dac_read_search,
-
-
   # S6-Overlay Binaries (often Symlinks)
-  /bin/** ix,
   /usr/bin/bash ix,
   /usr/bin/env ix,
   /usr/bin/s6-* ix,
   /usr/lib/bashio/** ix,
-  /etc/services.d/** rwix,
   /data/** rw,
   /tmp/** rwk,
   
   # Capabilities fuer Signale
-  capability kill,
   signal (send) set=(kill,term,int,hup,cont),
 
 

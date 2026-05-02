@@ -58,6 +58,17 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted,audit) {
   /data/** rw,
   /tmp/** rwk,
   
+  # Bibliotheken und der Linker (Essenziell für Bash und S6)
+  /lib/** r,
+  /lib/** mr,
+  /usr/lib/** r,
+  /usr/lib/** mr,
+  
+  # Spezifisch für den dynamischen Linker
+  /lib/ld-*.so* mr,
+  /lib/*/ld-*.so* mr,
+  /usr/lib/ld-*.so* mr,
+
   # Capabilities fuer Signale
   signal (send) set=(kill,term,int,hup,cont),
 

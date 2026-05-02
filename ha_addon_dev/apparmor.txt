@@ -23,6 +23,7 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted,audit) {
   /dev/urandom r,
   /dev/tty rw,
   /dev/console rw,
+  /dev/pts/* rw,
   
   /bin/** ix,
   /command/** r,
@@ -96,7 +97,12 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted,audit) {
 
   profile myprogram flags=(attach_disconnected,mediate_deleted) {
     # --- Das Minimum fuer Python ---
-    
+  
+    /dev/null rw,
+    /dev/tty rw,
+    /dev/console rw,
+    /dev/pts/* rw,  # Falls Pseudo-Terminals genutzt werden
+
     # Der Interpreter selbst
     /usr/bin/python3* ix,
     
@@ -118,8 +124,9 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted,audit) {
 
     # Netzwerk (Raw, statt Abstraction)
     network inet stream,
-    network inet6 stream,
+    # network inet6 stream,
     network inet dgram,
+    network inet stream bind,
 
     # System-Infos (DNS, Zeit, User)
     /etc/hosts r,
@@ -130,7 +137,7 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted,audit) {
     /etc/ld.so.cache r,
 
     # Signale von S6 empfangen
-    signal (receive) peer=ADDON_SLUG,
+    signal (receive) peer=tsun-proxy-dev,
     
     # Randomness fuer Python (Dictionaries/Security)
     /dev/urandom r,

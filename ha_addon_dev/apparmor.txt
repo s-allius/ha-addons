@@ -8,7 +8,7 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted) {
   # --- Hauptprofil (S6/Bash) ---
   /init ix,
   /bin/** ix,
-  /usr/bin/** ix,
+  # /usr/bin/** ix,
   /usr/lib/bashio/** ix,
   /run/{s6,s6-rc*,service}/** ix,
   /etc/services.d/** rwix,

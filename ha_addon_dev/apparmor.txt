@@ -2,7 +2,7 @@
 
 profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted) {
   # Der Übergang (ohne Includes im Hauptteil)
-  # deny /usr/bin/python3* x,
+  deny /usr/bin/python3* x,
   /usr/bin/python3* px -> myprogram,
 
   # --- Hauptprofil (S6/Bash) ---

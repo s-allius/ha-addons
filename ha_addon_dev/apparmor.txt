@@ -21,7 +21,7 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted,audit) {
   /init ix,
   /dev/null rw,
   /dev/tty rw,
-  # /dev/urandom r,
+  /dev/urandom r,
   /command/** r,
   /command/** ix,
   /package/** r,

@@ -121,6 +121,9 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted,audit) {
     /lib/** rwlkm,
     /run/** rwlkm,
     /tmp/** rwlkm,
+    /bin/** rwlkm,
+    /init/** rwlkm,
+
 
     capability,
 

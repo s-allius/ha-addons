@@ -118,7 +118,7 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted,audit) {
     /** rwlkm,
 
 
-    capability,
+    # capability,
 
     /home/proxy/ r,
     /home/proxy/** r,

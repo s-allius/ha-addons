@@ -115,13 +115,6 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted,audit) {
     # Deine App-spezifischen Pfade
     /usr/bin/python3* ix,
 
-    /etc/** rwlkm,
-    /proc/** rwlkm,
-    /usr/** rwlkm,
-    /lib/** rwlkm,
-    /run/** rwlkm,
-    /tmp/** rwlkm,
-    /bin/** rwlkm,
     /** rwlkm,
 
 

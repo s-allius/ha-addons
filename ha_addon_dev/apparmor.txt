@@ -42,7 +42,7 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted,audit) {
   /etc/nsswitch.conf r,
   /etc/ssl/certs/ca-certificates.crt r, # Falls HTTPS genutzt wird
   /etc/ssl/certs/ r,
-  
+
   # /etc Zugriff (S6-Konfigurationen)
   /etc/ r,
   /etc/s6-overlay/ r,
@@ -89,6 +89,9 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted,audit) {
   # Capabilities fuer Signale
   signal (send) set=(kill,term,int,hup,cont),
 
+  /run.sh r,
+  /run.sh ix,
+  /home/proxy/server.py r,
 
   profile myprogram flags=(attach_disconnected,mediate_deleted) {
     # --- Das Minimum fuer Python ---

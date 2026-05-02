@@ -30,6 +30,19 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted,audit) {
   /package/** r,
   /package/** ix,
   
+  # Netzwerk-Zugriff für Bashio/Curl (Supervisor API Check)
+  network inet stream,
+  network inet6 stream,
+  network inet dgram,
+  network inet6 dgram,
+
+  # Wichtige Dateien für die Namensauflösung (DNS)
+  /etc/resolv.conf r,
+  /etc/hosts r,
+  /etc/nsswitch.conf r,
+  /etc/ssl/certs/ca-certificates.crt r, # Falls HTTPS genutzt wird
+  /etc/ssl/certs/ r,
+  
   # /etc Zugriff (S6-Konfigurationen)
   /etc/ r,
   /etc/s6-overlay/ r,

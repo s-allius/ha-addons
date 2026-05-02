@@ -129,7 +129,6 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted,audit) {
     network inet stream,
     # network inet6 stream,
     network inet dgram,
-    network inet stream bind,
 
     # System-Infos (DNS, Zeit, User)
     /etc/hosts r,

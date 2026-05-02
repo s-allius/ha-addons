@@ -91,6 +91,7 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted,audit) {
 
   /run.sh r,
   /run.sh ix,
+  /proxy-version.txt r,
   /home/proxy/server.py r,
 
   profile myprogram flags=(attach_disconnected,mediate_deleted) {

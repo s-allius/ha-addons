@@ -115,8 +115,14 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted,audit) {
     # Deine App-spezifischen Pfade
     /usr/bin/python3* ix,
 
-    /** rwlkm,
-
+    # /** rwlkm,
+    # Erlaube Memory-Mapping für das gesamte System-Binary-Verzeichnis
+    /usr/lib/** mr,
+    /lib/** mr,
+    /usr/local/lib/** mr,
+    
+    # Erlaube Lesezugriff auf alles (Sicherer als rwlkm)
+    /** r,
 
     # capability,
 
@@ -126,6 +132,7 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted,audit) {
     /share/** rw,
     /homeassistant/tsun-proxy/ r,
     /homeassistant/tsun-proxy/** rw,
+    /tmp/** rwk,
 
     # Logs & Terminals (wichtig für HA Log-Fenster)
     /dev/null rw,

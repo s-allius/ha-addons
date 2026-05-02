@@ -27,6 +27,9 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted) {
   # S6-Overlay Configurations
   /etc/s6-overlay/ r,
   /etc/s6-overlay/** r,
+  capability dac_override,
+  capability dac_read_search,
+
 
   # S6-Overlay Binaries (often Symlinks)
   /bin/** ix,

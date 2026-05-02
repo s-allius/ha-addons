@@ -128,7 +128,8 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted,audit) {
     network inet stream,
     # network inet6 stream,
     network inet dgram,
-    network inet stream bind,
+    /lib/x86_64-linux-gnu/libnss_*.so* mr,   # Für amd64 (Proxmox)
+    /usr/lib/libnss_*.so* mr,
 
     # System-Infos (DNS, Zeit, User)
     /etc/hosts r,

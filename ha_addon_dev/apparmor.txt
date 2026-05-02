@@ -10,7 +10,9 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted) {
   /init ix,
   /dev/null rw,
   /dev/tty rw,
+  /command/** r,
   /command/** ix,
+  /package/** r,
   /package/** ix,
 
   # S6-Overlay Binaries (often Symlinks)

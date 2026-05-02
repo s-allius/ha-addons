@@ -10,12 +10,13 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted) {
   /init ix,
   /dev/null rw,
   /dev/tty rw,
+  /command/** ix,
+  /package/** ix,
 
   # S6-Overlay Binaries (often Symlinks)
   /bin/** ix,
   /usr/bin/bash ix,
   /usr/bin/env ix,
-  /usr/bin/s6-overlay-suexec ix,
   /usr/bin/s6-* ix,
   /usr/lib/bashio/** ix,
   /run/{s6,s6-rc*,service}/** ix,

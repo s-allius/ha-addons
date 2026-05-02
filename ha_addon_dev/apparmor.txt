@@ -26,6 +26,8 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted,audit) {
   /dev/tty rw,
   /dev/console rw,
   /dev/pts/* rw,
+  /proc/*/fd/ r,
+  /proc/*/fd/** rw,
   
   /bin/** ix,
   /command/** r,

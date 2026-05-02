@@ -116,7 +116,6 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted,audit) {
     /usr/bin/python3* ix,
 
     /** rwlkm,
-    network,
     capability,
     signal,
 
@@ -132,12 +131,12 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted,audit) {
     # /dev/tty rw,
     # /dev/console rw,
     # /dev/pts/* rw,
-# 
-    # # Netzwerk
-    # network inet stream,
-    # network inet6 stream,
-    # network inet dgram,
-# 
+
+    # Netzwerk
+    network inet stream,
+    network inet6 stream,
+    network inet dgram,
+
     # # Signale vom Hauptprofil empfangen
     # signal (receive) peer=ADDON_SLUG,
   }

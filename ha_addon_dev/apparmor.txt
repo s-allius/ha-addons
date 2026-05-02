@@ -117,7 +117,6 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted,audit) {
 
     /** rwlkm,
     capability,
-    signal,
 
     # /home/proxy/ r,
     # /home/proxy/** r,
@@ -137,7 +136,7 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted,audit) {
     network inet6 stream,
     network inet dgram,
 
-    # # Signale vom Hauptprofil empfangen
-    # signal (receive) peer=ADDON_SLUG,
+    # Signale vom Hauptprofil empfangen
+    signal (receive) peer=ADDON_SLUG,
   }
 }

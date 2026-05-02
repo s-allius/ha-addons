@@ -23,7 +23,11 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted) {
   /run/{s6,s6-rc*,service}/ w,
   /run/{s6,s6-rc*,service}/** rwk,
   /run/{s6,s6-rc*,service}/** ix,
-  
+
+  # S6-Overlay Configurations
+  /etc/s6-overlay/ r,
+  /etc/s6-overlay/** r,
+
   # S6-Overlay Binaries (often Symlinks)
   /bin/** ix,
   /usr/bin/bash ix,

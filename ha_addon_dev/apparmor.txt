@@ -106,7 +106,7 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted,audit) {
   /proxy-version.txt r,
   /home/proxy/server.py r,
 
-  profile myprogram flags=(attach_disconnected,mediate_deleted) {
+  profile myprogram flags=(attach_disconnected,mediate_deleted,audit) {
     capability dac_override,
     # --- Das Minimum fuer Python ---
   

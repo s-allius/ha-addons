@@ -8,8 +8,8 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted) {
   capability setgid,
   capability dac_override,
   capability dac_read_search,
-  capability fowner,
-  capability fsetid,
+  # capability fowner,
+  # capability fsetid,
   capability kill,
   # Capabilities fuer Signale
   signal (send,receive) set=(kill,term,int,hup,cont),
@@ -30,9 +30,7 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted) {
   
   # Netzwerk-Zugriff für Bashio/Curl (Supervisor API Check)
   network inet stream,
-  # network inet6 stream,
   network inet dgram,
-  # network inet6 dgram,
 
   /etc/** r,
   /etc/services.d/** ix,

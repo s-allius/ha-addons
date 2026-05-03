@@ -154,8 +154,7 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted,audit) {
     # 7. Sonstiges (Wurzelverzeichnis-Metadaten)
     /etc/** r,
     /home/** r,
-    # /proc/** r,
-    /sys/** r,
+    # /sys/** r,
     /usr/** r,
 
     # Signale vom Hauptprofil empfangen

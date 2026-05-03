@@ -3,13 +3,11 @@
 profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted) {
 
   # S6-Overlay benötigt diese Capabilities, um Dienste zu starten
-  capability chown,
-  capability setuid,
-  capability setgid,
+  # capability chown,
+  # capability setuid,
+  # capability setgid,
   capability dac_override,
   capability dac_read_search,
-  # capability fowner,
-  # capability fsetid,
   capability kill,
   # Capabilities fuer Signale
   signal (send,receive) set=(kill,term,int,hup,cont),

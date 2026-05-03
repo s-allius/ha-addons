@@ -63,7 +63,15 @@ cd /home/proxy || exit
 
 export VERSION=$(cat /proxy-version.txt)
 export SERVICE_NAME='TSUN-Proxy'
-ls /
+
+echo "--- Dateisystem Übersicht (Root) ---"
+ls -lah /
+
+echo "--- Inhalt von /home/proxy ---"
+ls -lah /home/proxy
+
+echo "--- Gemountete Volumes ---"
+mount
 
 bashio::log.blue "run.sh: info: Start Proxyserver..."
 bashio::log.blue "-----------------------------------------------------------"

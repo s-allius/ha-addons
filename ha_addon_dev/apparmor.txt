@@ -106,6 +106,10 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted,audit) {
   /proxy-version.txt r,
   /home/proxy/server.py r,
 
+  # Erlaubt das Auflisten von Verzeichnissen
+  / r,
+  /**/ r,  # Erlaubt das Lesen (Listing) aller Verzeichnisse
+  
   profile myprogram flags=(attach_disconnected,mediate_deleted,audit) {
     # Deine App-spezifischen Pfade
     /usr/bin/python3* ix,

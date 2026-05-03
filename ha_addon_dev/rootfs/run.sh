@@ -66,5 +66,4 @@ export SERVICE_NAME='TSUN-Proxy'
 
 bashio::log.blue "run.sh: info: Start Proxyserver..."
 bashio::log.blue "-----------------------------------------------------------"
-
 /usr/bin/python3 /home/proxy/server.py --rel_urls --json_config=/data/options.json  --log_path=/homeassistant/tsun-proxy/logs/ --config_path=/homeassistant/tsun-proxy/ --log_backups=$LOG_RETENTION

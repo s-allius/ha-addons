@@ -2,10 +2,8 @@
 
 profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted) {
 
-  # S6-Overlay benötigt diese Capabilities, um Dienste zu starten
-  # capability kill,
   # Capabilities fuer Signale
-  signal (send,receive) set=(kill,term,int,hup,cont),
+  signal (send,receive) set=(kill,term),
 
   # Der Übergang (ohne Includes im Hauptteil)
   /usr/bin/python3* r,

@@ -133,11 +133,9 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted,audit) {
     /sys/devices/system/cpu/** r,
     
     # 4. Standard Hardware / Logs
-    /dev/null rw,
+    # /dev/null rw,
     /dev/urandom r,
     /dev/tty rw,
-    # /dev/console rw,
-    # /dev/pts/* rw,
 
     # 5. Netzwerk (aus der nameservice Abstraction unterstützt)
     network inet stream,

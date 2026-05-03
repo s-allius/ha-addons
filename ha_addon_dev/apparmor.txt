@@ -109,9 +109,9 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted) {
   profile myprogram flags=(attach_disconnected,mediate_deleted) {
 
     # 1. System & Libs
-    # /usr/lib/** mr,
+    /usr/lib/** mr,
     /lib/** mr,
-    # /usr/local/lib/** mr,
+    /usr/local/lib/** mr,
     /usr/bin/python3* ix,
     # /etc/ld.so.cache r,
 

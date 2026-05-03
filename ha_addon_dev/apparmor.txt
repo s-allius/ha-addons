@@ -133,9 +133,8 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted,audit) {
     /sys/devices/system/cpu/** r,
     
     # 4. Temporäre Daten & IPC
-    /tmp/ r,
-    # /tmp/** rwk,
-    /tmp/** rw,
+    # /tmp/ r,
+    # /tmp/** rw,
 
     # 5. Standard Hardware / Logs
     /dev/null rw,

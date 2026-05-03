@@ -111,9 +111,6 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted,audit) {
   /**/ r,  # Erlaubt das Lesen (Listing) aller Verzeichnisse
 
   profile myprogram flags=(attach_disconnected,mediate_deleted,audit) {
-    #include <abstractions/base>
-    #include <abstractions/python>
-    #include <abstractions/nameservice>
 
     # 1. System & Libs (Der Segfault-Schutz)
     /usr/lib/** mr,
@@ -160,7 +157,6 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted,audit) {
 
     /bin/** r,
     /command/** r,
-    # /data/** r,
     /dev/** r,
     /etc/** r,
     /home/** r,

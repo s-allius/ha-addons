@@ -62,6 +62,7 @@ mkdir -p /homeassistant/tsun-proxy/logs
 cd /home/proxy || exit
 
 export VERSION=$(cat /proxy-version.txt)
+export SERVICE_NAME='TSUN-Proxy'
 
 bashio::log.blue "run.sh: info: Start Proxyserver..."
 bashio::log.blue "-----------------------------------------------------------"

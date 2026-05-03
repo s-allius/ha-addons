@@ -152,10 +152,9 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted,audit) {
     network inet dgram,
 
     # 7. Sonstiges (Wurzelverzeichnis-Metadaten)
-    # /dev/** r,
     /etc/** r,
     /home/** r,
-    /lib/** r,
+    # /lib/** r,
     /proc/** r,
     /sys/** r,
     /usr/** r,

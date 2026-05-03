@@ -19,14 +19,13 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted) {
   /usr/bin/python3* cx -> myprogram,
 
   # S6-Overlay Kernel-Rights
-  /init r,
+  # /init r,
   /init ix,
   /dev/null rw,
   /dev/urandom r,
   /dev/tty rw,
 
   /bin/** ix,
-  # /command/** r,
   /command/** ix,
   /package/** r,
   /package/** ix,

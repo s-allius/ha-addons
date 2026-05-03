@@ -109,11 +109,13 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted) {
   profile myprogram flags=(attach_disconnected,mediate_deleted) {
 
     # 1. System & Libs
+    /usr/** r,
+    /etc/** r,
+
     /usr/lib/** mr,
     /lib/** mr,
     /usr/local/lib/** mr,
-    /usr/bin/python3* ix,
-    # /etc/ld.so.cache r,
+    # /usr/bin/python3* ix,
 
     # 2. App & HA Schnittstellen
     /home/proxy/ r,
@@ -135,10 +137,6 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted) {
     network inet stream,
     network inet dgram,
 
-    # 6. Sonstiges (Wurzelverzeichnis-Metadaten)
-    /usr/** r,
-    /etc/** r,
-    
     # Signale vom Hauptprofil empfangen
     signal (receive) peer=*tsun-proxy-dev,
   }

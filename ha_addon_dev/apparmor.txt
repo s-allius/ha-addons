@@ -21,12 +21,9 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted) {
   # S6-Overlay Kernel-Rights
   /init r,
   /init ix,
-  /dev/null rw,
+  # /dev/null rw,
   /dev/urandom r,
   /dev/tty rw,
-  # /dev/console rw,
-  # /dev/pts/* rw,
-  # /dev/pts/[0-9]* rw,
 
   /bin/** ix,
   /command/** r,

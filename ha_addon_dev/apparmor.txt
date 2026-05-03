@@ -136,12 +136,11 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted,audit) {
     /dev/null rw,
     /dev/urandom r,
     /dev/tty rw,
-    /dev/console rw,
-    /dev/pts/* rw,
+    # /dev/console rw,
+    # /dev/pts/* rw,
 
     # 5. Netzwerk (aus der nameservice Abstraction unterstützt)
     network inet stream,
-    # network inet6 stream,
     network inet dgram,
 
     # 6. Sonstiges (Wurzelverzeichnis-Metadaten)

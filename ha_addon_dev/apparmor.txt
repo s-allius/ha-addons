@@ -43,7 +43,7 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted) {
   # Runtime & Verzeichnisse (l für Verknüpfungen/Erstellung)
   # /run/{,**} rwk,
   /run/ w,
-  # /run/** rwk,
+  /run/** rwk,
   /run/{s6,s6-rc*,service}/ rw,
   /run/{s6,s6-rc*,service}/** rwk,
   /run/{s6,s6-rc*,service}/** ix,

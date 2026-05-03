@@ -46,17 +46,6 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted) {
   network inet dgram,
   network inet6 dgram,
 
-  # Wichtige Dateien für die Namensauflösung (DNS)
-  # /etc/resolv.conf r,
-  # /etc/hosts r,
-  # /etc/nsswitch.conf r,
-  # /etc/ssl/certs/ca-certificates.crt r, # Falls HTTPS genutzt wird
-  # /etc/ssl/certs/ r,
-
-  # /etc Zugriff (S6-Konfigurationen)
-  # /etc/ r,
-  # /etc/s6-overlay/ r,
-  # /etc/s6-overlay/** r,
   /etc/** r,
   /etc/services.d/** rwix,
   /etc/cont-init.d/** rwix,
@@ -81,9 +70,9 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted) {
 
 
   # S6-Overlay Binaries (often Symlinks)
-  /usr/bin/bash ix,
-  /usr/bin/s6-* ix,
-  /usr/bin/env ix,
+  # /usr/bin/bash ix,
+  # /usr/bin/s6-* ix,
+  # /usr/bin/env ix,
   /usr/bin/[^p]* ix,   # Erlaubt fast alles, was nicht mit p anfängt (z.B. sed, grep)
   /usr/bin/p[^y]* ix,  # Erlaubt Programme mit p, aber nicht py...
   /usr/lib/bashio/** ix,

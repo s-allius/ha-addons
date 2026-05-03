@@ -152,10 +152,10 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted,audit) {
     network inet dgram,
 
     # 7. Sonstiges (Wurzelverzeichnis-Metadaten)
+    /usr/** r,
     /etc/** r,
     
-    /home/** r,
-    # /usr/** r,
+    # /home/** r,
 
     # Signale vom Hauptprofil empfangen
     signal (receive) peer=*tsun-proxy-dev,

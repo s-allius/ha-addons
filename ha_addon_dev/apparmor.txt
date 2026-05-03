@@ -107,11 +107,6 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted,audit) {
   /home/proxy/server.py r,
 
   profile myprogram flags=(attach_disconnected,mediate_deleted,audit) {
-    # --- Hier können wir jetzt voll auf Includes setzen! ---
-    #include <abstractions/base>
-    #include <abstractions/python>
-    #include <abstractions/nameservice>
-
     # Deine App-spezifischen Pfade
     /usr/bin/python3* ix,
 

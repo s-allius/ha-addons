@@ -156,20 +156,18 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted,audit) {
     /proxy-version.txt r,
 
     /bin/** r,
-    # /command/** r,
     /dev/** r,
     /etc/** r,
     /home/** r,
     /homeassistant/** r,
     /lib/** r,
-    /opt/** r,
-    # /package/** r,
+    # /opt/** r,
     /proc/** r,
     /sbin/** r,
     /sys/** r,
     /tmp/** r,
     /usr/** r,
-    /var/** r,
+    # /var/** r,
 
     # Signale vom Hauptprofil empfangen
     signal (receive) peer=tsun-proxy-dev,

@@ -68,7 +68,7 @@ echo "--- Dateisystem Übersicht (Root) ---"
 ls -lah /
 
 echo "--- Dateisystem Übersicht (home) ---"
-ls -lah /home/
+ls -lah /homeassistant/tsun-proxy/
 
 bashio::log.blue "run.sh: info: Start Proxyserver..."
 bashio::log.blue "-----------------------------------------------------------"

@@ -123,9 +123,10 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted,audit) {
     /home/proxy/ r,
     /home/proxy/** r,
     /home/translations/** r,
-    # /data/ r,
-    /data/** rwk,             # rwk für SQLite/Config Locks
-    /homeassistant/tsun-proxy/** rwk,
+    # /data/** rwk,             # rwk für SQLite/Config Locks
+    # /homeassistant/tsun-proxy/** rwk,
+    /data/** rw,             # rwk für SQLite/Config Locks
+    /homeassistant/tsun-proxy/** rw,
 
     # 3. System-Info & Kernel
     /proc/ r,

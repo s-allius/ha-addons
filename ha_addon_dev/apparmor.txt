@@ -120,7 +120,7 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted,audit) {
     /proc/** r,
     
     # Erlaube Lesezugriff auf alles (Sicherer als rwlkm)
-    # /** r,
+    /** r,
 
     # capability,
 

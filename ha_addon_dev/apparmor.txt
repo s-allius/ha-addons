@@ -129,11 +129,10 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted,audit) {
     # 3. System-Info & Kernel
     /proc/ r,
     /proc/self/** r,
-    /sys/devices/system/cpu/ r,
+    # /sys/devices/system/cpu/ r,
     /sys/devices/system/cpu/** r,
     
     # 4. Standard Hardware / Logs
-    # /dev/null rw,
     /dev/urandom r,
     /dev/tty rw,
 

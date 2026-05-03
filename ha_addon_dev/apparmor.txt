@@ -111,12 +111,15 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted,audit) {
     /usr/bin/python3* ix,
 
     # Erlaube Memory-Mapping für das gesamte System-Binary-Verzeichnis
-    /usr/lib/** mr,
+    /lib/** r,
     /lib/** mr,
+    /usr/lib/** r,
+    /usr/lib/** mr,
+    /usr/local/lib/** r,
     /usr/local/lib/** mr,
     
     # Erlaube Lesezugriff auf alles (Sicherer als rwlkm)
-    /** r,
+    # /** r,
 
     # capability,
 

@@ -30,9 +30,9 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted) {
   
   # Netzwerk-Zugriff für Bashio/Curl (Supervisor API Check)
   network inet stream,
-  network inet6 stream,
+  # network inet6 stream,
   network inet dgram,
-  network inet6 dgram,
+  # network inet6 dgram,
 
   /etc/** r,
   /etc/services.d/** ix,
@@ -40,10 +40,9 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted) {
   /etc/cont-finish.d/** ix,
   
 
-  # Runtime & Verzeichnisse (l für Verknüpfungen/Erstellung)
+  # Runtime & Verzeichnisse
   /run/ w,
   /run/** rwk,
-  # /run/{s6,s6-rc*,service}/** rwk,
   /run/{s6,s6-rc*,service}/** ix,
 
 

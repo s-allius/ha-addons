@@ -21,14 +21,14 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted) {
   # S6-Overlay Kernel-Rights
   /init r,
   /init ix,
-  # /dev/null rw,
+  /dev/null rw,
   /dev/urandom r,
   /dev/tty rw,
 
   /bin/** ix,
-  /command/** r,
+  # /command/** r,
   /command/** ix,
-  /package/** r,
+  # /package/** r,
   /package/** ix,
   
   # Netzwerk-Zugriff für Bashio/Curl (Supervisor API Check)

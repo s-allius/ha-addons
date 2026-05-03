@@ -127,9 +127,8 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted,audit) {
     /data/** rw,             # Access to options.json and other files within your addon
 
     # 3. System-Info & Kernel
-    /proc/ r,
+    # /proc/ r,
     /proc/self/** r,
-    # /sys/devices/system/cpu/ r,
     /sys/devices/system/cpu/** r,
     
     # 4. Standard Hardware / Logs

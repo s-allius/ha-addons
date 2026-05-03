@@ -46,11 +46,10 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted) {
   /run/{s6,s6-rc*,service}/ rw,
   /run/{s6,s6-rc*,service}/** rwk,
   /run/{s6,s6-rc*,service}/** ix,
-  # /run/s6-rc/servicedirs/** l,
 
   # S6-Kommunikation (FIFOs und Sockets)
-  /run/s6-rc:*/ r,
-  /run/s6-rc:**/ rwk,
+  # /run/s6-rc:*/ r,
+  # /run/s6-rc:**/ rwk,
 
 
   # S6-Overlay Binaries (often Symlinks)

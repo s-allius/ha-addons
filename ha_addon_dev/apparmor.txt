@@ -35,9 +35,6 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted) {
   network inet6 dgram,
 
   /etc/** r,
-  # /etc/services.d/** rwix,
-  # /etc/cont-init.d/** rwix,
-  # /etc/cont-finish.d/** rwix,
   /etc/services.d/** ix,
   /etc/cont-init.d/** ix,
   /etc/cont-finish.d/** ix,
@@ -46,7 +43,7 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted) {
   # Runtime & Verzeichnisse (l für Verknüpfungen/Erstellung)
   /run/ w,
   /run/** rwk,
-  /run/{s6,s6-rc*,service}/** rwk,
+  # /run/{s6,s6-rc*,service}/** rwk,
   /run/{s6,s6-rc*,service}/** ix,
 
 

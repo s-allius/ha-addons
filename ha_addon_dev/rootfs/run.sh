@@ -67,8 +67,8 @@ export SERVICE_NAME='TSUN-Proxy'
 echo "--- Dateisystem Übersicht (Root) ---"
 ls -lah /
 
-echo "--- Dateisystem Übersicht (sys/class) ---"
-ls -lah /sys/class/dmi/id/
+echo "--- Dateisystem Übersicht (etc) ---"
+ls -lah /etc/
 
 bashio::log.blue "run.sh: info: Start Proxyserver..."
 bashio::log.blue "-----------------------------------------------------------"

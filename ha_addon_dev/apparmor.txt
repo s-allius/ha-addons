@@ -2,12 +2,7 @@
 
 profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted) {
 
-  # Capabilities fuer Signale
   signal (send,receive) set=(kill,term),
-
-  # Der Übergang (ohne Includes im Hauptteil)
-  # /usr/bin/python3* r,
-  /usr/bin/python3* cx -> myprogram,
 
   # S6-Overlay Kernel-Rights
   /init rix,
@@ -34,7 +29,6 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted) {
   /run/** rwk,
   /run/{s6,s6-rc*,service}/** ix,
 
-
   # S6-Overlay Binaries
   /usr/bin/[^p]* ix,   # Erlaubt fast alles, was nicht mit p anfängt (z.B. sed, grep)
   /usr/bin/p[^y]* ix,  # Erlaubt Programme mit p, aber nicht py...
@@ -51,10 +45,13 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted) {
   /lib/*/ld-*.so* mr,
   /usr/lib/ld-*.so* mr,
 
-
+  # Entrypoint script run.sh
   /run.sh rix,
   /proxy-version.txt r,
   /home/proxy/server.py r,
+
+  # Start new profile for service
+  /usr/bin/python3* cx -> myprogram,
 
   profile myprogram flags=(attach_disconnected,mediate_deleted) {
 

@@ -26,7 +26,6 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted) {
 
   /bin/** ix,
   /command/** ix,
-  # /package/** r,
   /package/** rix,
   
   # Netzwerk-Zugriff für Bashio/Curl (Supervisor API Check)
@@ -47,11 +46,11 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted) {
   /run/{s6,s6-rc*,service}/ rw,
   /run/{s6,s6-rc*,service}/** rwk,
   /run/{s6,s6-rc*,service}/** ix,
-  /run/s6-rc/servicedirs/ w,
-  /run/s6-rc/servicedirs/** rwk,
+  # /run/s6-rc/servicedirs/ w,
+  # /run/s6-rc/servicedirs/** rwk,
   /run/s6-rc/servicedirs/** l,
-  /run/uncaught-logs/ w,
-  /run/uncaught-logs/** rwk,
+  # /run/uncaught-logs/ w,
+  # /run/uncaught-logs/** rwk,
 
   # S6-Kommunikation (FIFOs und Sockets)
   /run/s6-rc:*/ r,
@@ -75,7 +74,6 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted) {
   /usr/lib/ld-*.so* mr,
 
 
-  # /run.sh r,
   /run.sh rix,
   /proxy-version.txt r,
   /home/proxy/server.py r,

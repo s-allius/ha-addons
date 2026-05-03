@@ -1,6 +1,6 @@
 #include <tunables/global>
 
-profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted,audit) {
+profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted) {
 
   # S6-Overlay benötigt diese Capabilities, um Dienste zu starten
   capability chown,
@@ -106,18 +106,14 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted,audit) {
   /proxy-version.txt r,
   /home/proxy/server.py r,
 
-  # Erlaubt das Auflisten von Verzeichnissen
-  / r,
-  /**/ r,  # Erlaubt das Lesen (Listing) aller Verzeichnisse
+  profile myprogram flags=(attach_disconnected,mediate_deleted) {
 
-  profile myprogram flags=(attach_disconnected,mediate_deleted,audit) {
-
-    # 1. System & Libs (Der Segfault-Schutz)
-    /usr/lib/** mr,
+    # 1. System & Libs
+    # /usr/lib/** mr,
     /lib/** mr,
-    /usr/local/lib/** mr,
+    # /usr/local/lib/** mr,
     /usr/bin/python3* ix,
-    /etc/ld.so.cache r,
+    # /etc/ld.so.cache r,
 
     # 2. App & HA Schnittstellen
     /home/proxy/ r,

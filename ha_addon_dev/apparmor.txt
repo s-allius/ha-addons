@@ -28,7 +28,7 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted) {
   /bin/** ix,
   # /command/** r,
   /command/** ix,
-  # /package/** r,
+  /package/** r,
   /package/** ix,
   
   # Netzwerk-Zugriff für Bashio/Curl (Supervisor API Check)

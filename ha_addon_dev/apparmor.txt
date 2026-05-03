@@ -90,9 +90,9 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted) {
   /tmp/** rwk,
   
   # Bibliotheken und der Linker (Essenziell für Bash und S6)
-  /lib/** r,
+  # /lib/** r,
   /lib/** mr,
-  /usr/lib/** r,
+  # /usr/lib/** r,
   /usr/lib/** mr,
   
   # Spezifisch für den dynamischen Linker
@@ -115,7 +115,6 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted) {
     /usr/lib/** mr,
     /lib/** mr,
     /usr/local/lib/** mr,
-    # /usr/bin/python3* ix,
 
     # 2. App & HA Schnittstellen
     /home/proxy/ r,

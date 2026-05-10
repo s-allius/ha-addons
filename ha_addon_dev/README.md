@@ -1,6 +1,6 @@
 # Home Assistant App: TSUN-Proxy (Dev)
 
-This is a bleeding-edge version of the `TSUN Proxy`  Add-On.
+This is a bleeding-edge version of the `TSUN Proxy` App.
 
 The versions may be based on different feature branches and therefore the range of functions may change.
 

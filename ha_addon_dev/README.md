@@ -1,4 +1,4 @@
-# Home Assistant Add-on: TSUN-Proxy (Dev)
+# Home Assistant App: TSUN-Proxy (Dev)
 
 This is a bleeding-edge version of the `TSUN Proxy`  Add-On.
 
@@ -22,4 +22,4 @@ For production, please use the stable version 'TSUN Proxy'.
 
 ## About
 
-This Add-on and the TSUN Proxy is not related to the company TSUN. It is a private initiative that aims to connect TSUN inverters and storage systems with an MQTT broker. There is no support and no warranty from TSUN.
+This App and the TSUN Proxy is not related to the company TSUN. It is a private initiative that aims to connect TSUN inverters and storage systems with an MQTT broker. There is no support and no warranty from TSUN.

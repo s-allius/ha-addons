@@ -1,4 +1,4 @@
-# Home Assistant Add-on: TSUN-Proxy (Debug)
+# Home Assistant App: TSUN-Proxy (Debug)
 
 This is a bleeding-edge version of the `TSUN Proxy`  Add-On with debuging enabled by default.
 
@@ -23,4 +23,4 @@ For production please use the stable version `TSUN Proxy`. If you are interested
 
 ## About
 
-This Add-on and the TSUN Proxy is not related to the company TSUN. It is a private initiative that aims to connect TSUN inverters and storage systems with an MQTT broker. There is no support and no warranty from TSUN.
+This App and the TSUN Proxy is not related to the company TSUN. It is a private initiative that aims to connect TSUN inverters and storage systems with an MQTT broker. There is no support and no warranty from TSUN.

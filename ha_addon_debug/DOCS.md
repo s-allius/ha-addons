@@ -1,4 +1,4 @@
-# Home Assistant Add-on: TSUN Proxy
+# Home Assistant App: TSUN Proxy
 
 [TSUN Proxy][tsunproxy] enables a reliable connection between TSUN third generation
 inverters and an MQTT broker. With the proxy, you can easily retrieve real-time values
@@ -8,14 +8,14 @@ The optional connection to the TSUN Cloud can be disabled!
 
 ## Pre-requisites
 
-1. This Add-on requires an MQTT broker to work.
-For a typical installation, we recommend the [Mosquitto add-on][Mosquitto] running on your Home Assistant.
+1. This App requires an MQTT broker to work.
+For a typical installation, we recommend the [Mosquitto App][Mosquitto] running on your Home Assistant.
 
 2. You need to loop the proxy into the connection between the inverter and the TSUN Cloud,
 you must adapt the DNS record within the network that your inverter uses. You need a mapping
 from logger.talent-monitoring.com and/or iot.talent-monitoring.com to the IP address of your
 Home Assistant.
-This can be done, for example, by adding a local DNS record to [AdGuard Home Add-on][AdGuard]
+This can be done, for example, by adding a local DNS record to [AdGuard Home App][AdGuard]
 (navigate to `filters` on the AdGuard panel and add an entry under `custom filtering rules`).
 
 ## Installation
@@ -50,7 +50,7 @@ Example add-on configuration after installation:
 
 ```yaml
 inverters:
-  - serial: R17E760702080400
+  - serial: R17E000000000000
     node_id: PV-Garage
     suggested_area: Garage
     modbus_polling: false
@@ -89,7 +89,7 @@ Example add-on configuration for GEN3PLUS energie storages:
 ```yaml
 batteries:
   - serial: 4100000000000000
-    monitor_sn: 2300000000
+    monitor_sn: 3000000000
     node_id: bat_1
     suggested_area: Garage
     modbus_polling: false
@@ -174,4 +174,4 @@ SOFTWARE.
 [AdGuard]: https://github.com/hassio-addons/addon-adguard-home
 [repository-badge]: https://img.shields.io/badge/Add%20repository%20to%20my-Home%20Assistant-41BDF5?logo=home-assistant&style=for-the-badge
 [repository-url]: https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Fs-allius%2Fha-addons
-[configdetails]: https://github.com/s-allius/tsun-gen3-proxy/wiki/Configuration-toml
+[configdetails]: https://github.com/s-allius/tsun-gen3-proxy/wiki/Configuration-addon

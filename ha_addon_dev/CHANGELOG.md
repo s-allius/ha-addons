@@ -5,16 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [unreleased]
+## [Unreleased]
+
+## [0.15.0] - 2026-05-10
 
 - change the name `Add-On` to `App`
 - fixes the Web-UI links to the App Config and App Logs
 - Add changelog to the ha_addon pull request
 - Update sigstore/cosign-installer action to v4.1.2
-- fix HA App: allow mkdir for logfiles [#571](https://github.com/s-allius/tsun-gen3-proxy/issues/571)
+- fix HA App: allow mkdir for log files [#571](https://github.com/s-allius/tsun-gen3-proxy/issues/571)
 - Update ghcr.io/hassio-addons/base Docker tag to v20.1.1
-- use github action to build and sign the App and proxy image
-- HA App: fix and improve App Amore profile [#555](https://github.com/s-allius/tsun-gen3-proxy/issues/555)
+- use GitHub action to build and sign the HA App and proxy image
+- HA App: fix and improve AppAmore profile [#555](https://github.com/s-allius/tsun-gen3-proxy/issues/555)
 - fix exception attribute error [#550](https://github.com/s-allius/tsun-gen3-proxy/issues/550)
 - add network tests to the web UI [#452](https://github.com/s-allius/tsun-gen3-proxy/issues/452)
 - Update ghcr.io/hassio-addons/base Docker tag to v20.1.0
@@ -25,9 +27,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - HA App: Configure the LOG level from the HA configuration [#539](https://github.com/s-allius/tsun-gen3-proxy/issues/539)
 - HA App: Add translations for the log configuration
 - HA App: Configure the retention time for log files [#536](https://github.com/s-allius/tsun-gen3-proxy/issues/536)
-- HA App: Erase multiple logfiles in one step [#534](https://github.com/s-allius/tsun-gen3-proxy/issues/534)
+- HA App: Erase multiple log files in one step [#534](https://github.com/s-allius/tsun-gen3-proxy/issues/534)
 - bug fix for file retention from @mime24 [#522](https://github.com/s-allius/tsun-gen3-proxy/issues/522)
-- use python 3.14 in github action
+- use python 3.14 in GitHub action
 - Update dependency pytest to v9.0.3
 - Update dependency pytest-cov to v7.1.0
 - Update dependency python-dotenv to v1.2.2

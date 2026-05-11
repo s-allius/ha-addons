@@ -88,22 +88,23 @@ configuration:
     description: >-
       Der Proxy akzeptiert normalerweise nur Verbindungen von konfigurierten Wechselrichtern.
       Schalten Sie dies für Testzwecke und unbekannte Seriennummern ein.
-  mqtt.host:
-    name: MQTT Broker Host
-    description: >-
-      Hostname oder IP-Adresse des MQTT-Brokers. Wenn nicht gesetzt, versucht die App, eine Verbindung zum Home Assistant MQTT-Broker herzustellen.
-  mqtt.port:
-    name: MQTT Broker Port
-    description: >-
-      Port des MQTT-Brokers. Wenn nicht gesetzt, versucht die App, eine Verbindung zum Home Assistant MQTT-Broker herzustellen.
-  mqtt.user:
-    name: MQTT Broker Benutzer
-    description: >-
-      Benutzer für den MQTT-Broker. Wenn nicht gesetzt, versucht die App, eine Verbindung zum Home Assistant MQTT-Broker herzustellen.
-  mqtt.passwd:
-    name: MQTT Broker Passwort
-    description: >-
-      Passwort für den MQTT-Broker. Wenn nicht gesetzt, versucht die App, eine Verbindung zum Home Assistant MQTT-Broker herzustellen.
+  mqtt:
+    host:
+      name: MQTT Broker Host
+      description: >-
+        Hostname oder IP-Adresse des MQTT-Brokers. Wenn nicht gesetzt, versucht die App, eine Verbindung zum Home Assistant MQTT-Broker herzustellen.
+    port:
+      name: MQTT Broker Port
+      description: >-
+        Port des MQTT-Brokers. Wenn nicht gesetzt, versucht die App, eine Verbindung zum Home Assistant MQTT-Broker herzustellen.
+    user:
+      name: MQTT Broker Benutzer
+      description: >-
+        Benutzer für den MQTT-Broker. Wenn nicht gesetzt, versucht die App, eine Verbindung zum Home Assistant MQTT-Broker herzustellen.
+    passwd:
+      name: MQTT Broker Passwort
+      description: >-
+        Passwort für den MQTT-Broker. Wenn nicht gesetzt, versucht die App, eine Verbindung zum Home Assistant MQTT-Broker herzustellen.
   ha.auto_conf_prefix:
     name: MQTT-Präfix für das Abonnieren von Home Assistant-Statusaktualisierungen
   ha.discovery_prefix:

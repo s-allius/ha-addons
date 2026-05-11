@@ -27,12 +27,12 @@ configuration:
       modbus_polling:
         name: ModBus Polling
         description: Aktiviert Modbus poll
-      client_mode:
-        name: Client Mode
-        description: Erklärung Client Mode
-        host:
+      client_mode.host:
           name: Client Mode Host  
-          description: Erklärung Client Mode
+          description: Erklärung Client Mode Host
+      client_mode.port:
+        name: Client Mode Port
+        description: Erklärung Client Mode Port
 
   batteries:
     name: Batterien

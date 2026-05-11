@@ -14,6 +14,10 @@ configuration:
       Wechselrichter mit 'Y00', 'Y17' oder 'Y47'!
 
       Siehe Beispielkonfiguration im Dokumentations-Tab
+    fields:
+      serial:
+        name: Endpoint Slug
+        description: URL path segment used for this generated BMP endpoint.
   batteries:
     name: Batterien
     description: >+

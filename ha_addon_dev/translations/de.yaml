@@ -26,14 +26,14 @@ configuration:
         description: MQTT replacement for inverters serial number.
       modbus_polling:
         name: ModBus Polling
-        descrioption: Aktiviert Modbus poll
+        description: Aktiviert Modbus poll
       client_mode:
         name: Client Mode
-        descrioption: Erklärung Client Mode
+        description: Erklärung Client Mode
         fields:
           host:
             name: Client Mode Host
-            descrioption: Erklärung Client Mode
+            description: Erklärung Client Mode
 
   batteries:
     name: Batterien

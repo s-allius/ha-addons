@@ -89,6 +89,8 @@ configuration:
       Der Proxy akzeptiert normalerweise nur Verbindungen von konfigurierten Wechselrichtern.
       Schalten Sie dies für Testzwecke und unbekannte Seriennummern ein.
   mqtt:
+    description: >-
+      Hostname or IP address of the MQTT broker. if not set, the app will try to connect to the Home Assistant MQTT broker
     host:
       name: MQTT Broker Host
       description: >-

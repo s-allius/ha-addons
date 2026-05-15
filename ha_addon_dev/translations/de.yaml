@@ -29,7 +29,7 @@ configuration:
           Wechselrichter als auch Batterien – eine unique Node-ID verwendet. Bei identischen IDs werden 
           die Daten der Geräte gegenseitig überschrieben.
       suggested_area:
-        name Standard-Bereich (Raum):
+        name: Standard-Bereich (Raum):
         description: >-
           Geben Sie hier den Standard-Bereich (z. B. „Solar“, „Garage“ oder „Keller“) an, dem dieses 
           Gerät bei der initialen Erkennung in Home Assistant automatisch zugeordnet werden soll.

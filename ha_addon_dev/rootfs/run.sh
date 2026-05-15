@@ -58,7 +58,7 @@ bashio::log.green "run.sh: info: app log level: $LOG_LVL"
 if bashio::config.exists "mqtt"; then
     VAL=$(bashio::config "mqtt")
     bashio::log.info "Removing ${VAL}"
-    bashio::addon.option "${mqtt}"
+    # bashio::addon.option "mqtt"
 else
     bashio::log.info "Missing mqtt"
 fi

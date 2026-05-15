@@ -91,24 +91,29 @@ configuration:
   mqtt:
     name: MQTT Broker
     description: >-
-      Hostname or IP address of the MQTT broker. if not set, the app will try to connect to the Home Assistant MQTT broker
+      Home Assistant beinhaltet eine MQTT Mosquitto Integration, wird diese verwendet, 
+      dann wird der Proxy automatisch konfiguriert und hier dürfen KEINE MQTT Zugangsdaten 
+      hinterlegt werden. Wir empfehlen diese Betriebsart für den Proxy.
+
+      Soll ein externer MQTT-Broker verwendet werden, dann müssen hier die notwendigen 
+      Zugangsdaten hinterlegt werden.
     fields:
       host:
         name: MQTT Broker Host
         description: >-
-          Hostname oder IP-Adresse des MQTT-Brokers. Wenn nicht gesetzt, versucht die App, eine Verbindung zum Home Assistant MQTT-Broker herzustellen.
+          Hostname oder IP-Adresse des MQTT-Brokers.
       port:
         name: MQTT Broker Port
         description: >-
-          Port des MQTT-Brokers. Wenn nicht gesetzt, versucht die App, eine Verbindung zum Home Assistant MQTT-Broker herzustellen.
+          Port des MQTT-Brokers.
       user:
         name: MQTT Broker Benutzer
         description: >-
-          Benutzer für den MQTT-Broker. Wenn nicht gesetzt, versucht die App, eine Verbindung zum Home Assistant MQTT-Broker herzustellen.
+          Benutzer für den MQTT-Broker.
       passwd:
         name: MQTT Broker Passwort
         description: >-
-          Passwort für den MQTT-Broker. Wenn nicht gesetzt, versucht die App, eine Verbindung zum Home Assistant MQTT-Broker herzustellen.
+          Passwort für den MQTT-Broker.
   ha:
     name: Home Assistant MQTT Parameter
     fields:

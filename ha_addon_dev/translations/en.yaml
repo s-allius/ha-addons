@@ -69,26 +69,30 @@ configuration:
       The proxy only usually accepts connections from configured inverters.
       Switch on for test purposes and unknown serial numbers.
   mqtt:
-    name: MQTT
+    name: MQTT Broker
     description: >-
-      Hostname or IP address of the MQTT broker. if not set, the app will try to connect to the Home Assistant MQTT broker
+      Home Assistant includes an MQTT Mosquitto integration. If this is used, the proxy 
+      is configured automatically and NO MQTT credentials must be entered here. We recommend 
+      this operating mode for the proxy.
+
+      If an external MQTT broker is to be used, the necessary credentials must be entered here.
     fields:
       host:
         name: MQTT Broker Host
         description: >-
-          Hostname or IP address of the MQTT broker. if not set, the app will try to connect to the Home Assistant MQTT broker
+          Hostname or IP address of the MQTT broker.
       port:
         name: MQTT Broker Port
         description: >-
-          Port of the MQTT broker. if not set, the app will try to connect to the Home Assistant MQTT broker
+          Port of the MQTT broker.
       user:
         name: MQTT Broker User
         description: >-
-          User for the MQTT broker. if not set, the app will try to connect to the Home Assistant MQTT broker
+          User for the MQTT broker.
       passwd:
         name: MQTT Broker Password
         description: >-
-          Password for the MQTT broker. if not set, the app will try to connect to the Home Assistant MQTT broker
+          Password for the MQTT broker.
   ha:
     name: Home Assistant MQTT Parameter
     fields:

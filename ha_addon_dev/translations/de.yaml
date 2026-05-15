@@ -103,41 +103,45 @@ configuration:
           Bei aktivem Client-Modus kann der Proxy die gelesenen Daten an die TSUN/Solarman Cloud 
           weiterleiten. Der Proxy emuliert dabei ein Gerät für die Cloud. Aktivieren Sie diese 
           Option, wenn Sie die Weiterleitung nutzen möchten.
-  tsun.enabled:
-    name: Verbindung zur TSUN Cloud - nur für GEN3-Wechselrichter
-    description: >+
-      Schaltet die Verbindung zur TSUN Cloud ein/aus.
-      Diese Verbindung ist erforderlich, wenn Sie Daten an die TSUN Cloud senden möchten,
-      z.B. um die TSUN-Apps zu nutzen oder Firmware-Updates zu erhalten.
-      
-      Ein => normaler Proxy-Betrieb.
-      Aus => Der Wechselrichter wird vom Internet isoliert.
-  tsun.listener:
-    name: Verbindung von TSUN GEN3-Wechselrichtern
-    description: >+
-      Öffnet/schließt den Port 5005 für unverschlüsselte Verbindungen von TSUN GEN3 Geräten.
-      Haben sie keine GEN3 Geräte, kann der Port geschlossen werden.
-      
-      Ein => nimmt reinkommende Verbindungen an.
-      Aus => blockiert reinkommende Verbindungen.
-  solarman.enabled:
-    name: Verbindung zur Solarman/TSUN Cloud - nur für GEN3PLUS Wechselrichter
-    description: >+
-      Schaltet die Verbindung zur Solarman oder TSUN Cloud ein/aus.
-      Diese Verbindung ist erforderlich, wenn Sie Daten an die Cloud senden möchten,
-      z.B. um die Solarman App oder TSUN Smart App zu nutzen oder Firmware-Updates zu erhalten.
-      
-      Ein => normaler Proxy-Betrieb.
-      Aus => Die GEN3PLUS Geräte werden vom Internet isoliert.
-  solarman.listener:
-    name: Verbindung von TSUN GEN3PLUS-Geräten
-    description: >+
-      Öffnet/schließt den Port 10000 für unverschlüsselte Verbindungen von TSUN GEN3PLUS Geräten.
-      Neue Firmware-Versionen von TSUN bauen verschlüsselte Verbindungen über einen anderen Port auf.
-      In diesem Fall können sie den Client-Modus nutzen und der Port kann geschlossen bleiben.
-      
-      Ein => nimmt reinkommende Verbindungen an.
-      Aus => blockiert reinkommende Verbindungen.
+  tsun:
+    fields:
+      enabled:
+        name: Verbindung zur TSUN Cloud - nur für GEN3-Wechselrichter
+        description: >+
+          Schaltet die Verbindung zur TSUN Cloud ein/aus.
+          Diese Verbindung ist erforderlich, wenn Sie Daten an die TSUN Cloud senden möchten,
+          z.B. um die TSUN-Apps zu nutzen oder Firmware-Updates zu erhalten.
+
+          Ein => normaler Proxy-Betrieb.
+          Aus => Der Wechselrichter wird vom Internet isoliert.
+      listener:
+        name: Verbindung von TSUN GEN3-Wechselrichtern
+        description: >+
+          Öffnet/schließt den Port 5005 für unverschlüsselte Verbindungen von TSUN GEN3 Geräten.
+          Haben sie keine GEN3 Geräte, kann der Port geschlossen werden.
+
+          Ein => nimmt reinkommende Verbindungen an.
+          Aus => blockiert reinkommende Verbindungen.
+  solarman:
+    fields:
+    enabled:
+      name: Verbindung zur Solarman/TSUN Cloud - nur für GEN3PLUS Wechselrichter
+      description: >+
+        Schaltet die Verbindung zur Solarman oder TSUN Cloud ein/aus.
+        Diese Verbindung ist erforderlich, wenn Sie Daten an die Cloud senden möchten,
+        z.B. um die Solarman App oder TSUN Smart App zu nutzen oder Firmware-Updates zu erhalten.
+        
+        Ein => normaler Proxy-Betrieb.
+        Aus => Die GEN3PLUS Geräte werden vom Internet isoliert.
+    listener:
+      name: Verbindung von TSUN GEN3PLUS-Geräten
+      description: >+
+        Öffnet/schließt den Port 10000 für unverschlüsselte Verbindungen von TSUN GEN3PLUS Geräten.
+        Neue Firmware-Versionen von TSUN bauen verschlüsselte Verbindungen über einen anderen Port auf.
+        In diesem Fall können sie den Client-Modus nutzen und der Port kann geschlossen bleiben.
+        
+        Ein => nimmt reinkommende Verbindungen an.
+        Aus => blockiert reinkommende Verbindungen.
   inverters.allow_all:
     name: Erlaube Verbindungen von sämtlichen Wechselrichtern
     description: >-

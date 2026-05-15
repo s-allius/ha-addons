@@ -224,7 +224,7 @@ configuration:
         Liste blockierter MQTT-Befehle für GEN3PLUS
   logging:
     name: Umfang der Protkollierung in Log-Dateien
-    description: >+
+    description: >-
       Der Proxy protokolliert Betriebsereignisse in verschiedenen Log-Dateien, welche 
       helfen Konfiguration- oder Kompatibilitätsprobleme zu finden und zu lösen. Um 
       Mitternacht wird ein Rollover durchgeführt. Sprich den Dateien wird das Tagesdatum 

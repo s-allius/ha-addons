@@ -1,6 +1,6 @@
 name: TSUN-Proxy (Dev)
 description: MQTT Proxy for TSUN Photovoltaic Inverters
-version:  0.16.0-dev-2605152057 
+version:  0.16.0-dev-2605152105 
 image: docker.io/sallius/tsun-gen3-addon
 url: https://github.com/s-allius/tsun-gen3-proxy
 slug: tsun-proxy-dev
@@ -79,14 +79,11 @@ schema:
 
   # optionale parameter
 
-  mqtt:
-    type: map
-    optional: true
-    schema:
-      host: str?
-      port: port?
-      user: str?
-      passwd: password?
+  "mqtt?":
+    host: str?
+    port: port?
+    user: str?
+    passwd: password?
   ha:
     auto_conf_prefix: str? # suggeriert optionale konfigurationsoption -> es darf jedoch kein default unter "options" angegeben werden
     discovery_prefix: str? # dito

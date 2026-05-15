@@ -27,7 +27,7 @@ configuration:
           part of the MQTT topics. Ensure that each device —both inverters and batteries— is configured 
           with a unique ID. Using duplicate IDs will cause device data to be overwritten.
       suggested_area:
-        name: Standard-Bereich (Raum):
+        name: Standard-Bereich (Raum)
         description: >-
           Specify the default area (e.g., "Solar", "Garage", or "Basement") where this device should 
           be automatically assigned upon initial discovery in Home Assistant.

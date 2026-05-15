@@ -22,17 +22,29 @@ configuration:
         name: Monitoring Seriennummer
         description: Die Monitoring SN befindet sich auf einem beigeletem Aufkleber (nur GENPLUS)
       node_id:
-        name: Node ID
-        description: MQTT replacement for inverters serial number.
+        name: Node-ID
+        description: >-
+          Die Node-ID dient der eindeutigen Zuordnung von Messdaten zu einem bestimmten Gerät und ist 
+          fester Bestandteil der MQTT-Topics. Bitte stellen Sie sicher, dass jedes Gerät – sowohl 
+          Wechselrichter als auch Batterien – eine unique Node-ID verwendet. Bei identischen IDs werden 
+          die Daten der Geräte gegenseitig überschrieben.
       modbus_polling:
         name: ModBus Polling
-        description: Aktiviert Modbus poll
+        description:  >-
+          Die Geräte senden ihre Messwerte standardmäßig alle 5 Minuten. Durch Aktivieren der 
+          ModBus-Polling-Option fragt der Proxy die Messwerte zusätzlich jede Minute ab und aktualisiert 
+          sie direkt im MQTT-Broker sowie in Home Assistant.
       client_mode.host:
-          name: Client Mode Host  
-          description: Erklärung Client Mode Host
+          name: Client Mode - Geräte IP
+          description: >-
+            Einige Geräte unterstützen eingehende Verbindungen, um Daten per ModBus-TCP im LAN 
+            bereitzustellen. Durch Aktivieren des Client-Modus baut der Proxy diese Verbindung 
+            automatisch auf. Für einen stabilen Betrieb muss dem Gerät eine feste IP-Adresse zugewiesen 
+            sein. Tragen Sie diese feste IP-Adresse hier ein.
       client_mode.port:
-        name: Client Mode Port
-        description: Erklärung Client Mode Port
+        name: Client Mode - Geräte Portnummer
+        description: >-
+          Spezifizieren Sie hier den Port für die ModBus-TCP-Verbindung. Der Standardport ist 8899.
 
   batteries:
     name: Batterien

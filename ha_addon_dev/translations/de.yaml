@@ -116,6 +116,10 @@ configuration:
           Passwort für den MQTT-Broker.
   ha:
     name: Home Assistant MQTT Parameter
+    description: >-
+      Falls Sie Ihren MQTT-Broker nicht mit der Standardkonfiguration von Home Assistant 
+      betreiben, können Sie die Präfixe hier anpassen. Bitte ändern Sie diese Werte nur, 
+      wenn Sie die Auswirkungen genau kennen.
     fields:
       auto_conf_prefix:
         name: Auto-Config-Präfix

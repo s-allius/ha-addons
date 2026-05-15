@@ -89,7 +89,7 @@ configuration:
       Der Proxy akzeptiert normalerweise nur Verbindungen von konfigurierten Wechselrichtern.
       Schalten Sie dies für Testzwecke und unbekannte Seriennummern ein.
   mqtt:
-    name: MQTT
+    name: MQTT Broker
     description: >-
       Hostname or IP address of the MQTT broker. if not set, the app will try to connect to the Home Assistant MQTT broker
     fields:
@@ -109,16 +109,19 @@ configuration:
         name: MQTT Broker Passwort
         description: >-
           Passwort für den MQTT-Broker. Wenn nicht gesetzt, versucht die App, eine Verbindung zum Home Assistant MQTT-Broker herzustellen.
-  ha.auto_conf_prefix:
-    name: MQTT-Präfix für das Abonnieren von Home Assistant-Statusaktualisierungen
-  ha.discovery_prefix:
-    name: MQTT-Präfix für das discovery topic
-  ha.entity_prefix:
-    name: MQTT-Themenpräfix für die Veröffentlichung von Wechselrichterwerten
-  ha.proxy_node_id:
-    name: MQTT-Knoten-ID für die proxy_node_id
-  ha.proxy_unique_id:
-    name: MQTT-eindeutige ID zur Identifizierung einer Proxy-Instanz
+  ha:
+    name: Home Assistant MQTT Parameter
+    fields:
+      auto_conf_prefix:
+        name: MQTT-Präfix für das Abonnieren von Home Assistant-Statusaktualisierungen
+      discovery_prefix:
+        name: MQTT-Präfix für das discovery topic
+      entity_prefix:
+        name: MQTT-Themenpräfix für die Veröffentlichung von Wechselrichterwerten
+      proxy_node_id:
+        name: MQTT-Knoten-ID für die proxy_node_id
+      proxy_unique_id:
+        name: MQTT-eindeutige ID zur Identifizierung einer Proxy-Instanz
   tsun.host:
     name: TSUN Cloud Host
     description: >-

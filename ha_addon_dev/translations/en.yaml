@@ -89,16 +89,19 @@ configuration:
         name: MQTT Broker Password
         description: >-
           Password for the MQTT broker. if not set, the app will try to connect to the Home Assistant MQTT broker
-  ha.auto_conf_prefix:
-    name: MQTT prefix for subscribing for homeassistant status updates
-  ha.discovery_prefix:
-    name: MQTT prefix for discovery topic
-  ha.entity_prefix:
-    name: MQTT topic prefix for publishing inverter values
-  ha.proxy_node_id:
-    name: MQTT node id, for the proxy_node_id
-  ha.proxy_unique_id:
-    name: MQTT unique id, to identify a proxy instance
+  ha:
+    name: Home Assistant MQTT Parameter
+    fields:
+      auto_conf_prefix:
+        name: MQTT prefix for subscribing for homeassistant status updates
+      discovery_prefix:
+        name: MQTT prefix for discovery topic
+      entity_prefix:
+        name: MQTT topic prefix for publishing inverter values
+      proxy_node_id:
+        name: MQTT node id, for the proxy_node_id
+      proxy_unique_id:
+        name: MQTT unique id, to identify a proxy instance
   tsun.host:
     name: TSUN Cloud Host
     description: >-

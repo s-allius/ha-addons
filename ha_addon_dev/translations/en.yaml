@@ -26,6 +26,11 @@ configuration:
           The Node ID is required to uniquely assign telemetry data to its respective device and forms 
           part of the MQTT topics. Ensure that each device —both inverters and batteries— is configured 
           with a unique ID. Using duplicate IDs will cause device data to be overwritten.
+      suggested_area:
+        name Standard-Bereich (Raum):
+        description: >-
+          Specify the default area (e.g., "Solar", "Garage", or "Basement") where this device should 
+          be automatically assigned upon initial discovery in Home Assistant.
       modbus_polling:
         name: ModBus Polling
         description: >-
@@ -42,7 +47,12 @@ configuration:
         name: Client Mode - Device Port
         description: >-
           Specify the network port used for the ModBus TCP connection (Default: 8899).
-
+      client_mode.forward:
+        name: Client Mode - Weiterleitung
+        description: >-
+          When Client Mode is active, the proxy can forward the retrieved data to the TSUN/Solarman 
+          Cloud. The proxy then emulates a device for the cloud. Enable this option if you want to 
+          use the forwarding feature.
   batteries:
     name: Energy Storages
     description: >+

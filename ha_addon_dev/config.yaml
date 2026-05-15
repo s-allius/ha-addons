@@ -1,6 +1,6 @@
 name: TSUN-Proxy (Dev)
 description: MQTT Proxy for TSUN Photovoltaic Inverters
-version:  0.16.0-dev-2605151825 
+version:  0.16.0-dev-2605151829 
 image: docker.io/sallius/tsun-gen3-addon
 url: https://github.com/s-allius/tsun-gen3-proxy
 slug: tsun-proxy-dev
@@ -130,10 +130,12 @@ options:
   logging:
     retention_days: 4
     level: INFO
-  tsun.listener: true # set default
-  tsun.enabled: true # set default
-  solarman.listener: true # set default
-  solarman.enabled: true # set default
+  tsun:
+    listener: true # set default
+    enabled: true # set default
+  solarman:
+    listener: true # set default
+    enabled: true # set default
   inverters.allow_all: false # set default
   gen3plus.at_acl.tsun.allow: ["AT+Z", "AT+UPURL", "AT+SUPDATE"]
   gen3plus.at_acl.mqtt.allow: ["AT+"]

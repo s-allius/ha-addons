@@ -118,15 +118,25 @@ configuration:
     name: Home Assistant MQTT Parameter
     fields:
       auto_conf_prefix:
-        name: MQTT-Präfix für das Abonnieren von Home Assistant-Statusaktualisierungen
+        name: Auto-Config-Präfix
+        description: >-
+          MQTT-Präfix für das Abonnieren von Home Assistant-Statusaktualisierungen
       discovery_prefix:
-        name: MQTT-Präfix für das discovery topic
+        name: Discovery-Präfix
+        description: >-
+          MQTT-Präfix für das discovery topic
       entity_prefix:
-        name: MQTT-Themenpräfix für die Veröffentlichung von Wechselrichterwerten
+        name: Entity-Präfix
+        description: >-
+          MQTT-Themenpräfix für die Veröffentlichung von Wechselrichterwerten
       proxy_node_id:
-        name: MQTT-Knoten-ID für die proxy_node_id
+        name: Proxy Node-ID
+        description: >-
+          MQTT-Knoten-ID für die proxy_node_id
       proxy_unique_id:
-        name: MQTT-eindeutige ID zur Identifizierung einer Proxy-Instanz
+        name: Proxy Unique-ID
+        description: >-
+          MQTT-eindeutige ID zur Identifizierung einer Proxy-Instanz
   tsun.host:
     name: TSUN Cloud Host
     description: >-

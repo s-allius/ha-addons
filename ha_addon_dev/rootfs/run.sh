@@ -55,13 +55,6 @@ bashio::log.green "run.sh: info: app log retention: $LOG_RETENTION days"
 LOG_LVL=$(bashio::config "logging.level" $LOG_LVL)
 bashio::log.green "run.sh: info: app log level: $LOG_LVL"
 
-if bashio::config.exists "mqtt"; then
-    VAL=$(bashio::config "mqtt")
-    bashio::log.info "Removing ${VAL}"
-    # bashio::addon.option "mqtt"
-else
-    bashio::log.info "Missing mqtt"
-fi
 
 # Create folder for log und config files
 mkdir -p /homeassistant/tsun-proxy/logs

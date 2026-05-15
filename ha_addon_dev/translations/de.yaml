@@ -124,24 +124,24 @@ configuration:
           Aus => blockiert reinkommende Verbindungen.
   solarman:
     fields:
-    enabled:
-      name: Verbindung zur Solarman/TSUN Cloud - nur für GEN3PLUS Wechselrichter
-      description: >+
-        Schaltet die Verbindung zur Solarman oder TSUN Cloud ein/aus.
-        Diese Verbindung ist erforderlich, wenn Sie Daten an die Cloud senden möchten,
-        z.B. um die Solarman App oder TSUN Smart App zu nutzen oder Firmware-Updates zu erhalten.
-        
-        Ein => normaler Proxy-Betrieb.
-        Aus => Die GEN3PLUS Geräte werden vom Internet isoliert.
-    listener:
-      name: Verbindung von TSUN GEN3PLUS-Geräten
-      description: >+
-        Öffnet/schließt den Port 10000 für unverschlüsselte Verbindungen von TSUN GEN3PLUS Geräten.
-        Neue Firmware-Versionen von TSUN bauen verschlüsselte Verbindungen über einen anderen Port auf.
-        In diesem Fall können sie den Client-Modus nutzen und der Port kann geschlossen bleiben.
-        
-        Ein => nimmt reinkommende Verbindungen an.
-        Aus => blockiert reinkommende Verbindungen.
+      enabled:
+        name: Verbindung zur Solarman/TSUN Cloud - nur für GEN3PLUS Wechselrichter
+        description: >+
+          Schaltet die Verbindung zur Solarman oder TSUN Cloud ein/aus.
+          Diese Verbindung ist erforderlich, wenn Sie Daten an die Cloud senden möchten,
+          z.B. um die Solarman App oder TSUN Smart App zu nutzen oder Firmware-Updates zu erhalten.
+          
+          Ein => normaler Proxy-Betrieb.
+          Aus => Die GEN3PLUS Geräte werden vom Internet isoliert.
+      listener:
+        name: Verbindung von TSUN GEN3PLUS-Geräten
+        description: >+
+          Öffnet/schließt den Port 10000 für unverschlüsselte Verbindungen von TSUN GEN3PLUS Geräten.
+          Neue Firmware-Versionen von TSUN bauen verschlüsselte Verbindungen über einen anderen Port auf.
+          In diesem Fall können sie den Client-Modus nutzen und der Port kann geschlossen bleiben.
+          
+          Ein => nimmt reinkommende Verbindungen an.
+          Aus => blockiert reinkommende Verbindungen.
   inverters.allow_all:
     name: Erlaube Verbindungen von sämtlichen Wechselrichtern
     description: >-

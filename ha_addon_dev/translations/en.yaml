@@ -55,6 +55,10 @@ configuration:
           When Client Mode is active, the proxy can forward the retrieved data to the 
           TSUN/Solarman Cloud. The proxy then emulates a device for the cloud. Enable 
           this option if you want to use the forwarding feature.  batteries:
+      pv1.manufacturer:
+        name: PV-1 Manufacturer          
+      pv1.type:
+        name: PV-1 Type
   batteries:
     name: Batteries
     fields:

@@ -55,6 +55,10 @@ configuration:
           Bei aktivem Client-Modus kann der Proxy die gelesenen Daten an die TSUN/Solarman Cloud 
           weiterleiten. Der Proxy emuliert dabei ein Gerät für die Cloud. Aktivieren Sie diese 
           Option, wenn Sie die Weiterleitung nutzen möchten.
+      pv1.manufacturer:
+        name: PV-1 Modul Hersteller            
+      pv1.type:
+        name: PV-1 Type
   batteries:
     name: Batterien
     fields:

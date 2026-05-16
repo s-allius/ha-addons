@@ -240,7 +240,7 @@ configuration:
       Aufbewahrungsdauer und das gewünschte Log-Level festlegen.
     fields:
       level:
-        name: Logging level
+        name: Log-Level
         description: >-
           DEBUG: Vollständige Protokollierung  -  
           INFO(default): Informationen, Warnungen und Fehlermeldungen  -  

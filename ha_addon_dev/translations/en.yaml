@@ -243,7 +243,7 @@ configuration:
       and the maximum log level here.
     fields:
       level:
-        name: Logging level
+        name: Log level
         description: >-
           DEBUG: Complete logging  -  
           INFO(default): Information, warnings, and error messages  -  

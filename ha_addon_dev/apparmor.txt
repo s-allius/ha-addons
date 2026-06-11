@@ -50,12 +50,16 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted) {
   # Network access for Bashio (Supervisor API) and DNS
   network inet stream,
   network inet dgram,
-  
+  # Erlaubt S6 das Erstellen und Binden von UNIX-Sockets
+  network unix stream,
+  network unix dgram,
+
   # --- RUNTIME DIRECTORIES (S6-RC) ---
   /run/ w,
   /run/** rwk,
   /run/{s6,s6-rc*,service}/** ix,
-  
+  /run/{s6,s6-rc*,service}/** rwlk,
+
   # --- EXECUTABLES ---
   # Restricted /usr/bin access to avoid 'px' modifier conflicts with Python
   /usr/bin/[^p]* ix,

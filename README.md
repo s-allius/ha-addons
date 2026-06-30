@@ -4,6 +4,13 @@ This Home Assistant App repository provides the **TSUN Proxy App**, which seamle
 
 ---
 
+## 🤖 Automated Repository (CI/CD)
+
+> [!NOTE]
+> This repository is fully automated. You do not need to open issues or pull requests here. All files, updates, and releases in this repository are automatically built and deployed via a GitHub workflow directly from the main project repository: **[tsun-gen3-proxy](https://github.com/s-allius/tsun-gen3-proxy)**.
+
+---
+
 ## 🚀 Installation
 
 You can add this repository to your Home Assistant instance either automatically or manually.

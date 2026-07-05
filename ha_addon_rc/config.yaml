@@ -1,6 +1,6 @@
 name: TSUN-Proxy (Release Candidate)
 description: MQTT Proxy for TSUN Photovoltaic Inverters
-version:  0.16.0-rc1 
+version:  0.16.0-rc2 
 image: ghcr.io/s-allius/tsun-gen3-addon
 url: https://github.com/s-allius/tsun-gen3-proxy
 slug: tsun-proxy-rc

@@ -56,9 +56,6 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted) {
   /run/** rw,
   /run/**/ r,
   /run/s6/ rw,
-  # /run/s6/** rwk,
-  # /run/s6-rc*/** rwk,
-  # /run/service/** rwk,
   /run/{s6,s6-rc*,service}/** rwk,
   
   /run/s6/basedir/scripts/** ixmr,

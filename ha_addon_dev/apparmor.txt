@@ -54,9 +54,9 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted) {
   
   # --- RUNTIME DIRECTORIES (S6-RC) ---
   /run/ rw,
-  /run/** rwl,
-  /run/**/ rwm,
-  /run/{s6,s6-rc*,service}/** rixwkl,
+  /run/** rwk,
+  /run/**/ mr,
+  /run/{s6,s6-rc*,service}/** ix,
   
   # --- EXECUTABLES ---
   # Restricted /usr/bin access to avoid 'px' modifier conflicts with Python

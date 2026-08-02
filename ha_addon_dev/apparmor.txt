@@ -53,8 +53,8 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted) {
   network inet dgram,
   
   # --- RUNTIME DIRECTORIES (S6-RC) ---
-  /run/ rwmk,
-  /run/** rwmwkl,
+  /run/ rwkl,
+  /run/** rwmkl,
   /run/{s6,s6-rc*,service}/** rixwkl,
   
   # --- EXECUTABLES ---

@@ -13,7 +13,7 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted) {
   signal (send,receive) set=(kill,term),
   capability kill,
   # capability chown, setuid, setgid, dac_override, fowner,
-  capability chown,   dac_override, fowner,
+  # capability chown,   dac_override, fowner,
 
   # --- BOOT & INIT (S6-Overlay) ---
   /init rix,
@@ -53,9 +53,9 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted) {
   network inet dgram,
   
   # --- RUNTIME DIRECTORIES (S6-RC) ---
-  /run/ rw,
+  /run/ w,
   /run/** rwk,
-  /run/**/ mr,
+  # /run/**/ mr,
   /run/{s6,s6-rc*,service}/** ix,
   
   # --- EXECUTABLES ---

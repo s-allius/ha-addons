@@ -13,6 +13,7 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted) {
   signal (send,receive) set=(kill,term),
   capability kill,
   # capability chown, setuid, setgid, dac_override, fowner,
+  capability chown,   dac_override, fowner,
 
   # --- BOOT & INIT (S6-Overlay) ---
   /init rix,
@@ -52,9 +53,9 @@ profile tsun-proxy-dev flags=(attach_disconnected,mediate_deleted) {
   network inet dgram,
   
   # --- RUNTIME DIRECTORIES (S6-RC) ---
-  /run/ w,
-  /run/** rwk,
-  /run/{s6,s6-rc*,service}/** ix,
+  /run/ rwmk,
+  /run/** rwmwkl,
+  /run/{s6,s6-rc*,service}/** rixwkl,
   
   # --- EXECUTABLES ---
   # Restricted /usr/bin access to avoid 'px' modifier conflicts with Python

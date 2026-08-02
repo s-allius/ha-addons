@@ -1,6 +1,6 @@
 name: TSUN-Proxy (Dev)
 description: MQTT Proxy for TSUN Photovoltaic Inverters
-version:  0.17.0-dev-2608021509 
+version:  0.17.0-dev-2608021550 
 image: docker.io/sallius/tsun-gen3-addon
 url: https://github.com/s-allius/tsun-gen3-proxy
 slug: tsun-proxy-dev
@@ -11,7 +11,7 @@ arch:
   - amd64
 startup: services
 homeassistant_api: true
-apparmor: false
+apparmor: true
 map:
   - type: addon_config
     path: /homeassistant/tsun-proxy

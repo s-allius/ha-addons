@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Update dependency coverage to v7.15.4
 - Update ghcr.io/hassio-addons/base Docker tag to v21.0.1
 - Update dependency aiohttp to v3.14.3
 - Update dependency quart to v0.21.0
@@ -22,6 +23,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- Proxy crashes on receiving 0xff fill bytes in fixed size string arrays [#656](https://github.com/s-allius/tsun-gen3-proxy/issues/656)
 - Fix Regular CRC errors for MODBUS responses [#645](https://github.com/s-allius/tsun-gen3-proxy/issues/645)
 
 ## [0.16.0] - 2026-07-06

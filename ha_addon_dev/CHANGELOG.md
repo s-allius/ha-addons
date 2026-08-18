@@ -9,10 +9,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- TSUN MP3000 support [#652](https://github.com/s-allius/tsun-gen3-proxy/issues/652)
 - Add env variable to set log level of trace.log [#640](https://github.com/s-allius/tsun-gen3-proxy/issues/640)
 
 ### Changed
 
+- Update ghcr.io/hassio-addons/base Docker tag to v21.0.2
+- Update dependency python-dotenv to v1.2.3
+- Update python Docker tag to v3.14.7
 - Update dependency coverage to v7.15.4
 - Update ghcr.io/hassio-addons/base Docker tag to v21.0.1
 - Update dependency aiohttp to v3.14.3

@@ -9,7 +9,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- TSUN MP3000 support [#652](https://github.com/s-allius/tsun-gen3-proxy/issues/652)
 - Add env variable to set log level of trace.log [#640](https://github.com/s-allius/tsun-gen3-proxy/issues/640)
 
 ### Changed
@@ -49,6 +48,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Update dependency quart to v0.22.0
 - Update dependency coverage to v7.15.0
 - Update dependency tzlocal to v5.4.4
 - Update dependency coverage to v7.14.3

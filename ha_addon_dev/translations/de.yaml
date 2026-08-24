@@ -58,7 +58,7 @@ configuration:
       sensor_list:
         name: Sensor-Liste
         description: >-
-          Geben Sie hier die 4 stellige Sensor-Listen Nummer (z.&nbsp;B. „02B0“, „1097“ oder „1511“) an.
+          Geben Sie hier die 4 stellige Sensor-Listen Nummer (z. B. „02B0“, „1097“ oder „1511“) an.
           Lassen sie das Feld leer oder nutzen „0000“ damit der Proxy eine automatische Erkennung durchführt.
       pv1.manufacturer:
         name: PV-1 Modul Hersteller            
@@ -141,7 +141,7 @@ configuration:
       sensor_list:
         name: Sensor-Liste
         description: >-
-          Geben Sie hier die 4 stellige Sensor-Listen Nummer (z.&nbsp;B. „0908“ oder „3026“) an.
+          Geben Sie hier die 4 stellige Sensor-Listen Nummer (z. B. „0908“ oder „3026“) an.
           Lassen sie das Feld leer oder nutzen „0000“ damit der Proxy eine automatische Erkennung durchführt.
       pv1.manufacturer:
         name: PV-1 Modul Hersteller            

@@ -9,6 +9,59 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Close zombie connections [#700](https://github.com/s-allius/tsun-gen3-proxy/issues/700)
+- Initiate a resync every 3 hours to the TSUN cloud [#685](https://github.com/s-allius/tsun-gen3-proxy/issues/685)
+- Client Mode: Reconnect to the device after connection timeouts -[#692](https://github.com/s-allius/tsun-gen3-proxy/issues/692)
+- allow Y4Z serial numbers [#690](https://github.com/s-allius/tsun-gen3-proxy/issues/690)
+- Client Mode: Reconnect to the device after connection reset -[#688](https://github.com/s-allius/tsun-gen3-proxy/issues/688)
+- TSUN MP3000 support [#652](https://github.com/s-allius/tsun-gen3-proxy/issues/652)
+- Add env variable to set log level of trace.log [#640](https://github.com/s-allius/tsun-gen3-proxy/issues/640)
+
+### Changed
+
+- Update ghcr.io/hassio-addons/base Docker tag to v21.0.8
+- Update dependency aiohttp to v3.14.5
+- Update dependency pysonar to v1.9.0.5762
+- Update dependency python-dotenv to v1.2.4
+- fix more sonar qube warnings
+- Update ghcr.io/hassio-addons/base Docker tag to v21.0.6
+- Update dependency coverage to v7.16.2
+- Update dependency flake8 to v7.4.1
+- Update ghcr.io/hassio-addons/base Docker tag to v21.0.5
+- Update dependency ubuntu to v26
+- Update dependency coverage to v7.16.1
+- Update ghcr.io/hassio-addons/base Docker tag to v21.0.4
+- Optimize github action for build and test run
+- Speed up unit tests
+- Disable Client Mode Forwarding for non supporting Sensor Lists [#676](https://github.com/s-allius/tsun-gen3-proxy/issues/676)
+- Update dependency quart to v0.23.1
+- Update dependency coverage to v7.16.0
+- Update ghcr.io/hassio-addons/base Docker tag to v21.0.3
+- Improve sensor-list configuration [#666](https://github.com/s-allius/tsun-gen3-proxy/issues/666)
+- Update dependency quart to v0.22.0
+- Update ghcr.io/hassio-addons/base Docker tag to v21.0.2
+- Update dependency python-dotenv to v1.2.3
+- Update python Docker tag to v3.14.7
+- Update dependency coverage to v7.15.4
+- Update ghcr.io/hassio-addons/base Docker tag to v21.0.1
+- Update dependency aiohttp to v3.14.3
+- Update dependency quart to v0.21.0
+- Update dependency aiohttp to v3.14.2
+- Update actions/setup-python action to v7
+- Update dependency coverage to v7.15.2
+
+### Fixed
+
+- fix SonarQube warnings and code smells
+- MS3000: Measurement values in HA are not being registered
+ [#665](https://github.com/s-allius/tsun-gen3-proxy/issues/665)
+- Proxy crashes on receiving 0xff fill bytes in fixed size string arrays [#656](https://github.com/s-allius/tsun-gen3-proxy/issues/656)
+- Fix Regular CRC errors for MODBUS responses [#645](https://github.com/s-allius/tsun-gen3-proxy/issues/645)
+
+## [0.16.0] - 2026-07-06
+
+### Added
+
 - MX3000D: add inverter status and alarms
 - sensor_list detection for client mode
 - push MQTT inverter values on starting the client mode
@@ -24,6 +77,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Update dependency coverage to v7.15.0
 - Update dependency tzlocal to v5.4.4
 - Update dependency coverage to v7.14.3
 - Update dependency coverage to v7.14.2
